@@ -172,24 +172,32 @@
     }
     .logo {
       display: flex;
-      flex-direction: column;
-      line-height: 1;
-      gap: 1px;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
       color: #fff;
+    }
+    .logo-text-block {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      gap: 2px;
     }
     .logo-top {
       font-family: var(--ff-display);
-      font-weight: 900;
-      font-size: 1.25rem;
-      letter-spacing: 0.04em;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
       color: #fff;
     }
     .logo-sub {
       font-family: var(--ff-mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.18em;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.42);
     }
     .hdr-nav {
       display: flex;
@@ -1272,43 +1280,45 @@
 ════════════════════════════════ -->
 <header id="site-header">
   <div class="wrap hdr-inner">
-    <a href="#home" class="logo" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 60" width="38" height="44" aria-label="Aleck the Renovator logo mark">
+    <a href="#home" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 58" width="34" height="40" aria-label="Aleck the Renovator">
         <defs>
-          <clipPath id="nc-diamond">
-            <polygon points="26,4 50,28 26,52 2,28"/>
+          <clipPath id="nc-dia">
+            <polygon points="26,8 48,30 26,52 4,30"/>
           </clipPath>
         </defs>
-        <!-- Three dots above diamond -->
-        <circle cx="18" cy="2" r="2" fill="#D4801A"/>
-        <circle cx="26" cy="0" r="2" fill="#D4801A"/>
-        <circle cx="34" cy="2" r="2" fill="#D4801A"/>
-        <!-- Diamond base -->
-        <polygon points="26,4 50,28 26,52 2,28" fill="#D4801A"/>
-        <!-- Brick rows clipped to diamond -->
-        <g clip-path="url(#nc-diamond)" fill="#A85F10" opacity="0.85">
-          <rect x="4"  y="6"  width="18" height="5.5"/>
-          <rect x="24" y="6"  width="18" height="5.5"/>
-          <rect x="14" y="13" width="18" height="5.5"/>
-          <rect x="34" y="13" width="18" height="5.5"/>
-          <rect x="-2" y="13" width="14" height="5.5"/>
-          <rect x="4"  y="20" width="18" height="5.5"/>
-          <rect x="24" y="20" width="18" height="5.5"/>
-          <rect x="14" y="27" width="18" height="5.5"/>
-          <rect x="34" y="27" width="18" height="5.5"/>
-          <rect x="-2" y="27" width="14" height="5.5"/>
-          <rect x="4"  y="34" width="18" height="5.5"/>
-          <rect x="24" y="34" width="18" height="5.5"/>
-          <rect x="14" y="41" width="18" height="5.5"/>
-          <rect x="34" y="41" width="18" height="5.5"/>
-          <rect x="-2" y="41" width="14" height="5.5"/>
+        <!-- 3 dots above apex -->
+        <circle cx="20" cy="4" r="1.8" fill="#D4801A"/>
+        <circle cx="26" cy="2" r="1.8" fill="#D4801A"/>
+        <circle cx="32" cy="4" r="1.8" fill="#D4801A"/>
+        <!-- Diamond fill — warm amber -->
+        <polygon points="26,8 48,30 26,52 4,30" fill="#F0A020"/>
+        <!-- Brick rows clipped to diamond — 3 tone colours -->
+        <g clip-path="url(#nc-dia)">
+          <!-- Row 1: dark brown (top) -->
+          <rect x="5"  y="12" width="18" height="6" fill="#7A3515" rx="0.5"/>
+          <rect x="25" y="12" width="18" height="6" fill="#7A3515" rx="0.5"/>
+          <!-- Row 2: cream/white -->
+          <rect x="14" y="20" width="18" height="6" fill="#F0EAD0" rx="0.5"/>
+          <rect x="34" y="20" width="18" height="6" fill="#F0EAD0" rx="0.5"/>
+          <rect x="-4" y="20" width="16" height="6" fill="#F0EAD0" rx="0.5"/>
+          <!-- Row 3: reddish-brown (middle) -->
+          <rect x="5"  y="28" width="18" height="6" fill="#B55020" rx="0.5"/>
+          <rect x="25" y="28" width="18" height="6" fill="#B55020" rx="0.5"/>
+          <!-- Row 4: cream -->
+          <rect x="14" y="36" width="18" height="6" fill="#F0EAD0" rx="0.5"/>
+          <rect x="34" y="36" width="18" height="6" fill="#F0EAD0" rx="0.5"/>
+          <rect x="-4" y="36" width="16" height="6" fill="#F0EAD0" rx="0.5"/>
+          <!-- Row 5: dark brown (bottom) -->
+          <rect x="5"  y="44" width="18" height="6" fill="#7A3515" rx="0.5"/>
+          <rect x="25" y="44" width="18" height="6" fill="#7A3515" rx="0.5"/>
         </g>
-        <!-- Highlight edge lines (mortar) -->
-        <polygon points="26,4 50,28 26,52 2,28" fill="none" stroke="#E8924A" stroke-width="1" opacity="0.4"/>
+        <!-- Diamond border -->
+        <polygon points="26,8 48,30 26,52 4,30" fill="none" stroke="#D48010" stroke-width="1.5"/>
       </svg>
-      <span style="display:flex; flex-direction:column; line-height:1.1;">
-        <span style="font-family:'Playfair Display',serif; font-style:italic; font-weight:700; font-size:1.1rem; color:#fff; letter-spacing:0.02em; white-space:nowrap;">Aleck the Renovator</span>
-        <span style="font-family:'DM Mono',monospace; font-size:0.6rem; color:rgba(255,255,255,0.45); letter-spacing:0.12em; text-transform:uppercase; white-space:nowrap; margin-top:1px;">Cape Town · Est. 2010</span>
+      <span class="logo-text-block">
+        <span class="logo-top">Aleck the Renovator</span>
+        <span class="logo-sub">Cape Town &middot; Est. 2010</span>
       </span>
     </a>
     <nav class="hdr-nav">
@@ -2010,39 +2020,36 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo" style="display:flex; align-items:center; gap:10px;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 60" width="32" height="38" aria-label="Aleck the Renovator logo mark">
+        <div class="logo" style="margin-bottom:12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 58" width="28" height="33" aria-label="Aleck the Renovator">
               <defs>
-                <clipPath id="fc-diamond">
-                  <polygon points="26,4 50,28 26,52 2,28"/>
+                <clipPath id="fc-dia">
+                  <polygon points="26,8 48,30 26,52 4,30"/>
                 </clipPath>
               </defs>
-              <circle cx="18" cy="2" r="2" fill="#D4801A"/>
-              <circle cx="26" cy="0" r="2" fill="#D4801A"/>
-              <circle cx="34" cy="2" r="2" fill="#D4801A"/>
-              <polygon points="26,4 50,28 26,52 2,28" fill="#D4801A"/>
-              <g clip-path="url(#fc-diamond)" fill="#A85F10" opacity="0.85">
-                <rect x="4"  y="6"  width="18" height="5.5"/>
-                <rect x="24" y="6"  width="18" height="5.5"/>
-                <rect x="14" y="13" width="18" height="5.5"/>
-                <rect x="34" y="13" width="18" height="5.5"/>
-                <rect x="-2" y="13" width="14" height="5.5"/>
-                <rect x="4"  y="20" width="18" height="5.5"/>
-                <rect x="24" y="20" width="18" height="5.5"/>
-                <rect x="14" y="27" width="18" height="5.5"/>
-                <rect x="34" y="27" width="18" height="5.5"/>
-                <rect x="-2" y="27" width="14" height="5.5"/>
-                <rect x="4"  y="34" width="18" height="5.5"/>
-                <rect x="24" y="34" width="18" height="5.5"/>
-                <rect x="14" y="41" width="18" height="5.5"/>
-                <rect x="34" y="41" width="18" height="5.5"/>
-                <rect x="-2" y="41" width="14" height="5.5"/>
+              <circle cx="20" cy="4" r="1.8" fill="#D4801A"/>
+              <circle cx="26" cy="2" r="1.8" fill="#D4801A"/>
+              <circle cx="32" cy="4" r="1.8" fill="#D4801A"/>
+              <polygon points="26,8 48,30 26,52 4,30" fill="#F0A020"/>
+              <g clip-path="url(#fc-dia)">
+                <rect x="5"  y="12" width="18" height="6" fill="#7A3515" rx="0.5"/>
+                <rect x="25" y="12" width="18" height="6" fill="#7A3515" rx="0.5"/>
+                <rect x="14" y="20" width="18" height="6" fill="#F0EAD0" rx="0.5"/>
+                <rect x="34" y="20" width="18" height="6" fill="#F0EAD0" rx="0.5"/>
+                <rect x="-4" y="20" width="16" height="6" fill="#F0EAD0" rx="0.5"/>
+                <rect x="5"  y="28" width="18" height="6" fill="#B55020" rx="0.5"/>
+                <rect x="25" y="28" width="18" height="6" fill="#B55020" rx="0.5"/>
+                <rect x="14" y="36" width="18" height="6" fill="#F0EAD0" rx="0.5"/>
+                <rect x="34" y="36" width="18" height="6" fill="#F0EAD0" rx="0.5"/>
+                <rect x="-4" y="36" width="16" height="6" fill="#F0EAD0" rx="0.5"/>
+                <rect x="5"  y="44" width="18" height="6" fill="#7A3515" rx="0.5"/>
+                <rect x="25" y="44" width="18" height="6" fill="#7A3515" rx="0.5"/>
               </g>
-              <polygon points="26,4 50,28 26,52 2,28" fill="none" stroke="#E8924A" stroke-width="1" opacity="0.4"/>
+              <polygon points="26,8 48,30 26,52 4,30" fill="none" stroke="#D48010" stroke-width="1.5"/>
             </svg>
-            <span style="display:flex; flex-direction:column; line-height:1.1;">
-              <span style="font-family:'Playfair Display',serif; font-style:italic; font-weight:700; font-size:1rem; color:#fff;">Aleck the Renovator</span>
-              <span style="font-family:'DM Mono',monospace; font-size:0.58rem; color:rgba(255,255,255,0.35); letter-spacing:0.1em; text-transform:uppercase; margin-top:2px;">Cape Town · Est. 2010</span>
+            <span class="logo-text-block">
+              <span class="logo-top">Aleck the Renovator</span>
+              <span class="logo-sub">Cape Town &middot; Est. 2010</span>
             </span>
           </div>
         <p>Professional renovation services across Cape Town since 2010. Plumbing, painting, waterproofing, tiling, brickwork and full renovations — handled properly, every time.</p>

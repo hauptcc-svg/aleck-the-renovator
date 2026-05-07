@@ -1,0 +1,19 @@
+{
+  "testimonials": [
+    {
+      "quote": "I use Aleck to install ceilings, paint the interior and exterior of hostels at a boarding school. He has a team that helps him, and he manages them well. He is professional, reliable, and he has never disappointed me. The prices he charges are reasonable, he delivers neat work and cleans up after himself.",
+      "role": "Renovations Client",
+      "service": "Ceilings & Interior/Exterior Painting"
+    },
+    {
+      "quote": "I hired Aleck to extend my house and he did an excellent job. I was very impressed with the outcome. The quality of his work is outstanding — very professional, reliable, honest, hardworking, affordable and easy to deal with. I would highly recommend his services.",
+      "role": "Building Client",
+      "service": "House Extension & Construction"
+    },
+    {
+      "quote": "I used Aleck to install a wall, plastering, and painting the interior and exterior of the house. He is professional, reliable, and delivers quality work. He works promptly, charges reasonable prices, and his workmanship is good. He cleans up after himself.",
+      "role": "Masonry Client",
+      "service": "Wall, Plastering & Painting"
+    }
+  ]
+}

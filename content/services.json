@@ -1,0 +1,16 @@
+{
+  "services": [
+    { "num": "01", "name": "Brick Work & Paving", "desc": "Brick laying for all jobs big or small — new builds, renovations, extensions, fireplaces, patios and retaining walls. Solid, lasting work." },
+    { "num": "02", "name": "Plastering & Crack Repairs", "desc": "Indoor and outdoor plastering for whole homes or single walls. We find the root cause of cracks, repair properly, and leave a clean finish." },
+    { "num": "03", "name": "Screeding & Wooden Floors", "desc": "Floor screeding to level and prepare surfaces. Wooden floor sanding and re-sealing to bring tired floors back to their original quality." },
+    { "num": "04", "name": "Plumbing", "desc": "Reliable plumbing repairs and installations for bathrooms, kitchens and swimming pools. Leaks, blockages, full installations — available 24 hours." },
+    { "num": "05", "name": "Tiling & Cladding", "desc": "Wall and floor tiling for bathrooms, kitchens, outdoor areas and feature walls. We also install cladding and stone veneers." },
+    { "num": "06", "name": "Painting & Waterproofing", "desc": "Exterior and interior painting, roof painting, damp proofing and waterproofing. We repair leaking roofs, patios, bathrooms and showers." },
+    { "num": "07", "name": "Skimming & Ceilings", "desc": "Smooth skim plaster applied to walls and ceilings for a paint-ready surface. Ceiling installations, repairs and board replacements." },
+    { "num": "08", "name": "Drywalling & Partitioning", "desc": "Drywall for internal walls, partitions, design features, arches and eaves. Quick, clean and cost-effective space division." },
+    { "num": "09", "name": "Electrical Services", "desc": "General electrical work including lighting, downlights, DB boards, appliance installations and swimming pool pumps." },
+    { "num": "10", "name": "Built-in Cupboards", "desc": "Custom built-in cupboards and storage solutions for bedrooms, kitchens and living areas. Designed to fit your space." },
+    { "num": "11", "name": "Bathroom & Kitchen Renovations", "desc": "Complete remodels from gut to finished — waterproof, tile, plumb and paint. We handle the whole job so you don't have to manage five contractors." },
+    { "num": "12", "name": "Construction & Extensions", "desc": "New rooms, garages, house extensions and full construction projects across Cape Town. Built properly, from the ground up." }
+  ]
+}

@@ -1,0 +1,64 @@
+backend:
+  name: github
+  repo: hauptcc-svg/aleck-the-renovator
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+
+      - name: "general"
+        label: "📱 Contact & WhatsApp"
+        file: "content/general.json"
+        format: json
+        fields:
+          - { label: "WhatsApp number (digits only, with country code)", name: "whatsapp_number", widget: "string", hint: "e.g. 27848004749" }
+          - { label: "WhatsApp pre-fill message", name: "whatsapp_message", widget: "text", hint: "Message that pre-fills when someone taps WhatsApp" }
+          - { label: "Phone number (E.164 format)", name: "phone_number", widget: "string", hint: "e.g. +27848004749" }
+          - { label: "Phone display text", name: "phone_display", widget: "string", hint: "e.g. 084 800 4749" }
+
+      - name: "hero"
+        label: "🏠 Hero Section"
+        file: "content/hero.json"
+        format: json
+        fields:
+          - { label: "Main headline", name: "hero_h1", widget: "text", hint: "The large headline in the hero" }
+          - { label: "Sub-copy paragraph", name: "hero_copy", widget: "text" }
+
+      - name: "seo"
+        label: "🔍 SEO & Social Preview"
+        file: "content/seo.json"
+        format: json
+        fields:
+          - { label: "Page title (browser tab)", name: "seo_title", widget: "string" }
+          - { label: "Meta description (max 160 chars)", name: "seo_description", widget: "text" }
+
+      - name: "services"
+        label: "🔧 Services List"
+        file: "content/services.json"
+        format: json
+        fields:
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num", widget: "string", hint: "e.g. 01" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+
+      - name: "testimonials"
+        label: "⭐ Testimonials"
+        file: "content/testimonials.json"
+        format: json
+        fields:
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Role label", name: "role", widget: "string", hint: "e.g. Renovations Client" }
+              - { label: "Service context", name: "service", widget: "string", hint: "e.g. Ceilings & Painting" }

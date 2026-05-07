@@ -1,0 +1,2086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aleck the Renovator | Plumbing, Painting, Waterproofing &amp; Renovations Cape Town</title>
+  <meta name="description" content="Aleck the Renovator provides reliable plumbing, painting, waterproofing, tiling, building and renovation services across Cape Town. Call or WhatsApp 084 800 4749 for a free quote.">
+  <meta name="keywords" content="renovator Cape Town, plumber Cape Town, painting waterproofing Cape Town, tiling Cape Town, bathroom renovations Cape Town, home maintenance Cape Town, Salt River renovator">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aleck-the-renovator.netlify.app/" />
+  <meta property="og:title" content="Aleck the Renovator | Cape Town Renovations" />
+  <meta property="og:description" content="Plumbing, painting, waterproofing, tiling, brickwork and full renovations across Cape Town. Call 084 800 4749." />
+  <meta property="og:image" content="https://www.alecktherenovator.co.za/images/patio_to_braai_room_9.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"LocalBusiness","name":"Aleck the Renovator","address":{"@type":"PostalAddress","streetAddress":"1 Fenton Rd","addressLocality":"Salt River","addressRegion":"Cape Town","postalCode":"7925","addressCountry":"ZA"},"telephone":"+27848004749","openingHours":"Mo-Su 00:00-23:59","areaServed":"Cape Town"}
+  </script>
+
+  <style>
+    /* ─── RESET ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* ─── TOKENS ─── */
+    :root {
+      --stone:      #f1e9d6;
+      --stone-dark: #e6dcca;
+      --parchment:  #faf6ee;
+      --ink:        #17201a;
+      --moss:       #22402e;
+      --moss-mid:   #2d5c3e;
+      --sage:       #5a8c68;
+      --rust:       #b84c18;
+      --rust-dk:    #943a10;
+      --sand:       #dfd3b8;
+      --bark:       #4a3a28;
+      --warm-grey:  #5a4a38;
+      --white:      #ffffff;
+      --ff-display: 'Playfair Display', 'Times New Roman', Georgia, serif;
+      --ff-body:    'Source Sans 3', system-ui, -apple-system, sans-serif;
+      --ff-mono:    'DM Mono', 'Courier New', monospace;
+      --max:        1200px;
+      --g:          clamp(20px, 4vw, 40px);
+    }
+
+    body {
+      font-family: var(--ff-body);
+      background: var(--stone);
+      color: var(--bark);
+      line-height: 1.65;
+      font-size: 1rem;
+    }
+
+    /* Grain overlay — the analog touch */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)'/%3E%3C/svg%3E");
+    }
+
+    /* ─── LAYOUT ─── */
+    .wrap    { max-width: var(--max); margin: 0 auto; padding: 0 var(--g); }
+    .wrap-sm { max-width: 860px;      margin: 0 auto; padding: 0 var(--g); }
+
+    /* ─── TYPE ─── */
+    .label {
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .display {
+      font-family: var(--ff-display);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+    }
+    .lead {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      font-weight: 400;
+      color: var(--warm-grey);
+      line-height: 1.7;
+    }
+    h1, h2, h3 { font-family: var(--ff-display); line-height: 1.12; }
+    strong { font-weight: 700; color: var(--ink); }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--ff-body);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      padding: 13px 26px;
+      border-radius: 3px;
+      transition: all 0.18s;
+      white-space: nowrap;
+    }
+    .btn-rust   { background: var(--rust); color: #fff; }
+    .btn-rust:hover { background: var(--rust-dk); transform: translateY(-1px); }
+    .btn-moss   { background: var(--moss); color: #fff; }
+    .btn-moss:hover { background: #1a3322; transform: translateY(-1px); }
+    .btn-green  { background: #25d366; color: #fff; }
+    .btn-green:hover { background: #1fbb58; transform: translateY(-1px); }
+    .btn-outline { border: 1.5px solid var(--sand); color: var(--bark); background: transparent; }
+    .btn-outline:hover { border-color: var(--rust); color: var(--rust); }
+    .btn-white  { background: #fff; color: var(--ink); }
+    .btn-white:hover { background: var(--rust); color: #fff; }
+
+    /* ─── DIVIDER ─── */
+    .rule { width: 48px; height: 2px; background: var(--rust); display: block; margin-bottom: 20px; }
+
+    /* ═══════════════════════════════════
+       HEADER
+    ═══════════════════════════════════ */
+    #site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--moss);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .hdr-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      gap: 1px;
+      color: #fff;
+    }
+    .logo-top {
+      font-family: var(--ff-display);
+      font-weight: 900;
+      font-size: 1.25rem;
+      letter-spacing: 0.04em;
+      color: #fff;
+    }
+    .logo-sub {
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+    .hdr-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .hdr-nav a {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.72);
+      padding: 6px 12px;
+      border-radius: 2px;
+      transition: color 0.15s;
+      letter-spacing: 0.02em;
+    }
+    .hdr-nav a:hover { color: #fff; }
+    .hdr-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hdr-phone {
+      font-family: var(--ff-mono);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.05em;
+    }
+    .hdr-phone strong { color: #fff; font-weight: 500; }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 6px;
+    }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: rgba(255,255,255,0.85); }
+    #mob-nav {
+      display: none;
+      background: #1a3322;
+      padding: 20px var(--g) 24px;
+    }
+    #mob-nav.open { display: block; }
+    #mob-nav a {
+      display: block;
+      color: rgba(255,255,255,0.82);
+      padding: 11px 0;
+      font-size: 1rem;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      letter-spacing: 0.02em;
+    }
+    .mob-ctas { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+
+    /* ═══════════════════════════════════
+       HERO
+    ═══════════════════════════════════ */
+    #hero {
+      background: var(--moss);
+      min-height: calc(100vh - 60px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(40px, 6vw, 80px) var(--g) clamp(40px, 6vw, 80px) clamp(20px, 6vw, 72px);
+      max-width: 640px;
+      position: relative;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow .label { color: rgba(255,255,255,0.45); }
+    .hero-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--rust); flex-shrink: 0; }
+    .hero-stars { color: #e8b84b; font-size: 0.82rem; letter-spacing: 1px; }
+    .hero-h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.06;
+      margin-bottom: 24px;
+    }
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--stone);
+    }
+    .hero-copy {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 460px;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .hero-trust {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-trust-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .hero-trust-item .num {
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--stone);
+    }
+    .hero-trust-item .lbl {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-img-main {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-img-overlay {
+      position: absolute;
+      bottom: 32px;
+      left: -24px;
+      width: 42%;
+      aspect-ratio: 4/5;
+      border-radius: 2px;
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.4);
+      border: 3px solid var(--moss);
+    }
+    .hero-img-overlay img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ═══════════════════════════════════
+       TRUST BAR
+    ═══════════════════════════════════ */
+    #trust-bar {
+      background: var(--rust);
+      padding: 14px 0;
+    }
+    .trust-bar-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .ti {
+      font-family: var(--ff-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      padding: 5px 22px;
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+    }
+    .ti + .ti { border-left: 1px solid rgba(255,255,255,0.3); }
+    .ti strong { color: #fff; }
+
+    /* ═══════════════════════════════════
+       EMERGENCY BAR
+    ═══════════════════════════════════ */
+    #emergency-bar {
+      background: var(--ink);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 12px 0;
+    }
+    .emerg-inner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .emerg-badge {
+      background: var(--rust);
+      color: #fff;
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .emerg-text {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.65);
+      flex: 1;
+    }
+    .emerg-text strong { color: #fff; }
+    .emerg-link {
+      font-family: var(--ff-mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--rust);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .emerg-link:hover { color: #e05c20; }
+
+    /* ═══════════════════════════════════
+       WAYFINDING — "What do you need?"
+    ═══════════════════════════════════ */
+    #wayfinding {
+      background: var(--ink);
+      padding: 64px 0;
+    }
+    .wf-intro {
+      text-align: left;
+      margin-bottom: 40px;
+      padding: 0 var(--g);
+      max-width: var(--max);
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 40px;
+    }
+    .wf-intro h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .wf-intro p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.5);
+    }
+    .wf-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .wf-card {
+      padding: 32px 24px 28px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      cursor: pointer;
+      transition: background 0.18s;
+      position: relative;
+    }
+    .wf-card:last-child { border-right: none; }
+    .wf-card:hover { background: var(--rust); }
+    .wf-card:hover .wf-label { color: rgba(255,255,255,0.55); }
+    .wf-card:hover .wf-title { color: #fff; }
+    .wf-card:hover .wf-hints { color: rgba(255,255,255,0.75); }
+    .wf-card:hover .wf-arrow { color: rgba(255,255,255,0.6); }
+    .wf-label {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      margin-bottom: 10px;
+      transition: color 0.18s;
+    }
+    .wf-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      font-weight: 800;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.2;
+      margin-bottom: 10px;
+      transition: color 0.18s;
+    }
+    .wf-hints {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.55;
+      transition: color 0.18s;
+    }
+    .wf-arrow {
+      display: block;
+      margin-top: 18px;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.2);
+      transition: color 0.18s;
+    }
+
+    /* ═══════════════════════════════════
+       SERVICES
+    ═══════════════════════════════════ */
+    #services {
+      background: var(--parchment);
+      padding: 80px 0;
+    }
+    .svc-header {
+      margin-bottom: 56px;
+    }
+    .svc-header h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .svc-groups {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .svc-group {
+      padding: 36px 40px 36px 0;
+      border-bottom: 1px solid var(--sand);
+    }
+    .svc-group:nth-child(even) {
+      padding: 36px 0 36px 40px;
+      border-left: 1px solid var(--sand);
+    }
+    .svc-group:last-child,
+    .svc-group:nth-last-child(2) { border-bottom: none; }
+    .svc-num {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      color: var(--sage);
+      margin-bottom: 8px;
+    }
+    .svc-name {
+      font-family: var(--ff-display);
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .svc-desc {
+      font-size: 0.9rem;
+      color: var(--warm-grey);
+      line-height: 1.65;
+    }
+    .svc-cta-row {
+      margin-top: 56px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .svc-cta-row p {
+      font-size: 0.95rem;
+      color: var(--warm-grey);
+    }
+
+    /* ═══════════════════════════════════
+       BANNER — mid-page image strip
+    ═══════════════════════════════════ */
+    #banner {
+      height: clamp(280px, 40vw, 500px);
+      position: relative;
+      overflow: hidden;
+    }
+    .banner-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(23,32,26,0.82) 0%, rgba(23,32,26,0.3) 100%);
+      display: flex;
+      align-items: center;
+      padding: 0 clamp(24px, 8vw, 100px);
+    }
+    .banner-text {
+      max-width: 620px;
+    }
+    .banner-quote {
+      font-family: var(--ff-display);
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .banner-attr {
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ═══════════════════════════════════
+       GALLERY
+    ═══════════════════════════════════ */
+    #gallery {
+      background: var(--stone);
+      padding: 80px 0;
+    }
+    .gallery-hdr {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .gallery-hdr h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      color: var(--ink);
+    }
+    .gallery-filters {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .gf-btn {
+      font-family: var(--ff-body);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 7px 14px;
+      border-radius: 2px;
+      border: 1.5px solid var(--sand);
+      color: var(--warm-grey);
+      transition: all 0.15s;
+      background: transparent;
+    }
+    .gf-btn:hover, .gf-btn.active {
+      background: var(--moss);
+      border-color: var(--moss);
+      color: #fff;
+    }
+    /* Masonry via CSS columns */
+    .gallery-masonry {
+      column-count: 3;
+      column-gap: 12px;
+    }
+    .g-item {
+      break-inside: avoid;
+      margin-bottom: 12px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .g-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .g-item:hover img { transform: scale(1.04); }
+    .g-item-cap {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(23,32,26,0.8));
+      padding: 24px 12px 10px;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .g-item:hover .g-item-cap { opacity: 1; }
+    .g-item-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: var(--rust);
+      color: #fff;
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+    }
+    .g-item[data-cat] { display: none; }
+    .g-item.show { display: block; }
+
+    /* Lightbox */
+    #lb {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(17,26,20,0.95);
+      z-index: 9998;
+      align-items: center;
+      justify-content: center;
+    }
+    #lb.open { display: flex; }
+    #lb img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
+    #lb-x {
+      position: absolute;
+      top: 20px; right: 24px;
+      color: rgba(255,255,255,0.7);
+      font-size: 2rem;
+      background: none;
+      border: none;
+      line-height: 1;
+    }
+    #lb-x:hover { color: #fff; }
+
+    /* ═══════════════════════════════════
+       TESTIMONIALS
+    ═══════════════════════════════════ */
+    #testimonials {
+      background: var(--parchment);
+      padding: 80px 0;
+    }
+    .test-hdr { margin-bottom: 56px; }
+    .test-hdr h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      color: var(--ink);
+    }
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .test-card {
+      background: var(--white);
+      padding: 44px 36px 36px;
+      position: relative;
+    }
+    .test-card::before {
+      content: '\201C';
+      font-family: var(--ff-display);
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--sand);
+      position: absolute;
+      top: 20px;
+      left: 28px;
+    }
+    .test-q {
+      font-family: var(--ff-display);
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.6;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .test-meta { display: flex; flex-direction: column; gap: 3px; }
+    .test-stars { color: #c49a28; font-size: 0.85rem; letter-spacing: 1px; }
+    .test-role {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .test-service {
+      font-size: 0.82rem;
+      color: var(--warm-grey);
+    }
+    /* Reference photos strip */
+    .ref-strip {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--sand);
+    }
+    .ref-strip-hdr {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .ref-strip-hdr .label { color: var(--sage); }
+    .ref-strip-hdr p {
+      font-size: 0.83rem;
+      color: var(--warm-grey);
+    }
+    .ref-photos {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .ref-thumb {
+      width: clamp(90px, 14vw, 130px);
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1.5px solid var(--sand);
+      position: relative;
+      flex-shrink: 0;
+    }
+    .ref-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .ref-thumb:hover img { transform: scale(1.06); }
+    .ref-thumb::after {
+      content: 'View';
+      position: absolute;
+      inset: 0;
+      background: rgba(34,64,46,0.7);
+      color: #fff;
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .ref-thumb:hover::after { opacity: 1; }
+
+    /* Google review strip */
+    .google-strip {
+      margin-top: 40px;
+      background: var(--moss);
+      padding: 32px 36px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .g-num {
+      font-family: var(--ff-display);
+      font-size: 3rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+    }
+    .g-details {
+      flex: 1;
+    }
+    .g-stars { font-size: 1rem; color: #e8b84b; letter-spacing: 2px; }
+    .g-text { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 3px; }
+    .google-strip .btn { margin-left: auto; }
+
+    /* ═══════════════════════════════════
+       ABOUT / WHY
+    ═══════════════════════════════════ */
+    #about {
+      background: var(--moss);
+      padding: 80px 0;
+      color: #fff;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .about-img-col { position: relative; }
+    .about-img-main {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+    .about-year-tag {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--rust);
+      color: #fff;
+      padding: 20px 24px;
+      text-align: center;
+    }
+    .about-year-tag .yr {
+      font-family: var(--ff-display);
+      font-size: 2.4rem;
+      font-weight: 900;
+      display: block;
+      line-height: 1;
+    }
+    .about-year-tag .yr-lbl {
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      display: block;
+      margin-top: 4px;
+    }
+    .about-content .label { color: rgba(255,255,255,0.4); }
+    .about-content h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 900;
+      color: #fff;
+      margin: 10px 0 20px;
+    }
+    .about-content p {
+      color: rgba(255,255,255,0.68);
+      font-size: 0.98rem;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .about-list {
+      list-style: none;
+      margin: 24px 0 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+    }
+    .about-list li {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.72);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .about-list li::before {
+      content: '—';
+      color: var(--rust);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .about-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* ═══════════════════════════════════
+       LOCATIONS
+    ═══════════════════════════════════ */
+    #locations {
+      background: var(--stone-dark);
+      padding: 80px 0;
+    }
+    .loc-header { margin-bottom: 40px; }
+    .loc-header h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      color: var(--ink);
+    }
+    .loc-header p {
+      font-size: 1rem;
+      color: var(--warm-grey);
+      margin-top: 8px;
+      max-width: 520px;
+    }
+    .loc-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .loc-tag {
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 7px 14px;
+      border: 1px solid var(--sand);
+      color: var(--bark);
+      background: var(--parchment);
+      transition: all 0.15s;
+    }
+    .loc-tag:hover {
+      background: var(--moss);
+      border-color: var(--moss);
+      color: #fff;
+    }
+    .loc-footer {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid var(--sand);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .loc-footer p { font-size: 0.92rem; color: var(--warm-grey); }
+
+    /* ═══════════════════════════════════
+       CONTACT
+    ═══════════════════════════════════ */
+    #contact {
+      background: var(--parchment);
+      padding: 80px 0;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-info h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 900;
+      color: var(--ink);
+      margin: 10px 0 16px;
+    }
+    .contact-info p.intro {
+      font-size: 1.02rem;
+      color: var(--warm-grey);
+      line-height: 1.72;
+      margin-bottom: 32px;
+    }
+    .contact-rows { margin-bottom: 32px; }
+    .contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--sand);
+    }
+    .contact-row:first-child { border-top: 1px solid var(--sand); }
+    .cr-icon {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid var(--sand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .cr-icon svg { width: 16px; height: 16px; stroke: var(--moss); fill: none; stroke-width: 1.5; }
+    .cr-label {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--warm-grey);
+      display: block;
+    }
+    .cr-val {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-top: 2px;
+    }
+    .cr-val a { color: var(--rust); }
+    .contact-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    /* Form */
+    .contact-form-box {
+      background: var(--white);
+      padding: 44px 40px;
+      border-top: 3px solid var(--rust);
+    }
+    .cfb-title {
+      font-family: var(--ff-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .cfb-sub {
+      font-size: 0.85rem;
+      color: var(--warm-grey);
+      margin-bottom: 28px;
+    }
+    .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .fg { margin-bottom: 14px; }
+    .fg label {
+      display: block;
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--warm-grey);
+      margin-bottom: 6px;
+    }
+    .fg input, .fg select, .fg textarea {
+      width: 100%;
+      font-family: var(--ff-body);
+      font-size: 0.92rem;
+      color: var(--ink);
+      background: var(--stone);
+      border: 1.5px solid var(--sand);
+      padding: 11px 14px;
+      border-radius: 0;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .fg input:focus, .fg select:focus, .fg textarea:focus {
+      border-color: var(--moss);
+      background: #fff;
+    }
+    .fg textarea { resize: vertical; min-height: 96px; }
+    .fsub {
+      width: 100%;
+      background: var(--rust);
+      color: #fff;
+      font-family: var(--ff-body);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      padding: 15px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.18s;
+      margin-top: 6px;
+    }
+    .fsub:hover { background: var(--rust-dk); }
+    #form-ok {
+      display: none;
+      text-align: center;
+      padding: 32px 0;
+    }
+    #form-ok .big { font-family: var(--ff-display); font-size: 1.4rem; font-weight: 700; color: var(--ink); }
+    #form-ok p { font-size: 0.9rem; color: var(--warm-grey); margin-top: 6px; }
+    #form-ok a { color: var(--rust); font-weight: 700; }
+
+    /* ═══════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════ */
+    #footer {
+      background: #111b15;
+      color: rgba(255,255,255,0.6);
+      padding: 56px 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .footer-brand .logo-top { font-size: 1.2rem; color: #fff; }
+    .footer-brand .logo-sub { color: rgba(255,255,255,0.35); }
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      margin: 16px 0;
+    }
+    .footer-col h4 {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      transition: color 0.15s;
+    }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.9); }
+    .footer-btm {
+      padding: 18px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .footer-btm span { color: rgba(255,255,255,0.28); }
+
+    /* ═══════════════════════════════════
+       STICKY MOBILE CTA
+    ═══════════════════════════════════ */
+    #sticky {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: #111b15;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 10px 16px;
+      gap: 10px;
+    }
+    #sticky a { flex: 1; text-align: center; font-size: 0.88rem; padding: 13px; }
+
+    /* ═══════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════ */
+    @media (max-width: 980px) {
+      #hero { grid-template-columns: 1fr; min-height: auto; display: flex; flex-direction: column; }
+      .hero-right {
+        display: block;
+        height: clamp(220px, 52vw, 340px);
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .hero-img-overlay { display: none; }
+      .hero-left { max-width: 100%; padding: 48px var(--g); }
+      .hdr-nav, .hdr-cta { display: none; }
+      .hamburger { display: flex; }
+      .wf-grid { grid-template-columns: 1fr 1fr; }
+      .wf-card { border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .svc-groups { grid-template-columns: 1fr; }
+      .svc-group:nth-child(even) { padding: 36px 0; border-left: none; }
+      .svc-group { padding: 36px 0; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-img-col { margin-bottom: 48px; }
+      .about-img-main { aspect-ratio: 16/9; }
+      .about-year-tag { bottom: -12px; right: 0; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .test-grid { grid-template-columns: 1fr; gap: 2px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+      #sticky { display: flex; }
+      body { padding-bottom: 66px; }
+      .gallery-masonry { column-count: 2; }
+    }
+    @media (max-width: 600px) {
+      .wf-grid { grid-template-columns: 1fr; }
+      .wf-card { border-right: none; }
+      .gallery-masonry { column-count: 1; }
+      .frow { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+      .hero-btns { flex-direction: column; }
+      .hero-btns .btn { text-align: center; justify-content: center; }
+      .contact-form-box { padding: 28px 20px; }
+      .about-list { grid-template-columns: 1fr; }
+      .test-card { padding: 36px 24px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════
+     HEADER
+════════════════════════════════ -->
+<header id="site-header">
+  <div class="wrap hdr-inner">
+    <a href="#home" class="logo">
+      <span class="logo-top">Aleck</span>
+      <span class="logo-sub">the Renovator · Cape Town</span>
+    </a>
+    <nav class="hdr-nav">
+      <a href="#wayfinding">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hdr-cta">
+      <span class="hdr-phone"><strong>084 800 4749</strong> · open 24hrs</span>
+      <a href="tel:+27848004749" class="btn btn-rust" style="padding:9px 18px; font-size:0.82rem;">Call Now</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mob-nav">
+    <a href="#wayfinding" onclick="closeNav()">Services</a>
+    <a href="#gallery"    onclick="closeNav()">Gallery</a>
+    <a href="#testimonials" onclick="closeNav()">Reviews</a>
+    <a href="#about"      onclick="closeNav()">About</a>
+    <a href="#contact"    onclick="closeNav()">Contact</a>
+    <div class="mob-ctas">
+      <a href="tel:+27848004749"    class="btn btn-rust">Call 084 800 4749</a>
+      <a href="https://wa.me/+27848004749" class="btn btn-green">WhatsApp Quote</a>
+    </div>
+  </div>
+</header>
+
+<!-- ════════════════════════════════
+     HERO
+════════════════════════════════ -->
+<section id="home">
+  <div id="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="label">Salt River, Cape Town · Est. 2010</span>
+        <span class="hero-dot"></span>
+        <span class="hero-stars">★★★★★</span>
+      </div>
+      <h1 class="hero-h1">
+        We renovate<br>Cape Town homes.<br><em>Properly.</em>
+      </h1>
+      <p class="hero-copy">
+        Plumbing, painting, waterproofing, tiling, brickwork, bathrooms —
+        whatever your home needs, Aleck's team handles it with care
+        and craftsmanship. No fuss. No shortcuts.
+      </p>
+      <div class="hero-btns">
+        <a href="tel:+27848004749"         class="btn btn-rust"  style="font-size:0.98rem; padding:15px 30px;">Call 084 800 4749</a>
+        <a href="https://wa.me/+27848004749" class="btn btn-green" style="font-size:0.98rem; padding:15px 30px;">WhatsApp for a Quote</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <a href="https://www.google.com/search?q=Aleck+the+Renovator+Cape+Town+reviews" target="_blank" rel="noopener" style="text-decoration:none;">
+            <span class="num" style="text-decoration:underline; text-underline-offset:4px; text-decoration-color:rgba(241,233,214,0.35);">4,929</span>
+            <span class="lbl">Google Reviews</span>
+          </a>
+        </div>
+        <div class="hero-trust-item">
+          <span class="num">24hr</span>
+          <span class="lbl">Available</span>
+        </div>
+        <div class="hero-trust-item">
+          <span class="num">15+</span>
+          <span class="lbl">Years in Business</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img class="hero-img-main"
+           src="https://www.alecktherenovator.co.za/images/patio_to_braai_room_9.jpg"
+           alt="Renovation work by Aleck the Renovator in Cape Town"
+           loading="eager">
+      <div class="hero-img-overlay">
+        <img src="https://www.alecktherenovator.co.za/images/bathroom_gut_9.jpg"
+             alt="Bathroom renovation in progress, Cape Town"
+             loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     TRUST BAR
+════════════════════════════════ -->
+<div id="trust-bar">
+  <div class="trust-bar-row">
+    <div class="ti"><strong>Open 24 hours</strong></div>
+    <div class="ti">Cape Town based</div>
+    <div class="ti">Plumbing · Painting · Tiling · Renovations</div>
+    <div class="ti">Free quote requests</div>
+    <div class="ti"><strong>4,929</strong> Google reviews ★★★★★</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     EMERGENCY BAR
+════════════════════════════════ -->
+<div id="emergency-bar">
+  <div class="wrap emerg-inner">
+    <span class="emerg-badge">24hr Emergency</span>
+    <p class="emerg-text"><strong>Plumbing emergency?</strong> Burst pipe, blocked drain, no water — we respond any time, day or night.</p>
+    <a href="tel:+27848004749" class="emerg-link">Call 084 800 4749 →</a>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     WAYFINDING
+════════════════════════════════ -->
+<section id="wayfinding">
+  <div class="wf-intro">
+    <span class="label" style="color:rgba(255,255,255,0.3);">Find your service</span>
+    <h2>What brings you here?</h2>
+    <p>Pick what you need — we'll tell you exactly how we can help.</p>
+  </div>
+  <div class="wf-grid">
+    <div class="wf-card" onclick="scrollTo('#services')">
+      <div class="wf-label">01 / Plumbing</div>
+      <div class="wf-title">Got a leak or plumbing problem?</div>
+      <div class="wf-hints">Burst pipe · Blocked drain<br>Bathroom or kitchen installation<br>Swimming pool plumbing</div>
+      <span class="wf-arrow">→</span>
+    </div>
+    <div class="wf-card" onclick="scrollTo('#services')">
+      <div class="wf-label">02 / Painting</div>
+      <div class="wf-title">Damp walls, peeling paint or leaking roof?</div>
+      <div class="wf-hints">Interior &amp; exterior painting<br>Waterproofing &amp; damp proofing<br>Roof painting &amp; repairs</div>
+      <span class="wf-arrow">→</span>
+    </div>
+    <div class="wf-card" onclick="scrollTo('#services')">
+      <div class="wf-label">03 / Tiling</div>
+      <div class="wf-title">Renovating a bathroom or kitchen?</div>
+      <div class="wf-hints">Wall &amp; floor tiling<br>Full bathroom remodels<br>Feature walls &amp; cladding</div>
+      <span class="wf-arrow">→</span>
+    </div>
+    <div class="wf-card" onclick="scrollTo('#services')">
+      <div class="wf-label">04 / Building</div>
+      <div class="wf-title">Building, extending or repairing?</div>
+      <div class="wf-hints">Brickwork &amp; paving<br>Extensions &amp; new rooms<br>Plastering &amp; crack repairs</div>
+      <span class="wf-arrow">→</span>
+    </div>
+    <div class="wf-card" onclick="scrollTo('#services')">
+      <div class="wf-label">05 / Maintenance</div>
+      <div class="wf-title">General home maintenance?</div>
+      <div class="wf-hints">Ceilings, skimming &amp; drywalling<br>Wooden floors &amp; screeding<br>Electrical · Cupboards</div>
+      <span class="wf-arrow">→</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     SERVICES
+════════════════════════════════ -->
+<section id="services">
+  <div class="wrap">
+    <div class="svc-header">
+      <span class="label">Building &amp; Renovation Services — Cape Town</span>
+      <span class="rule" style="margin-top:12px;"></span>
+      <h2>Everything your home needs, under one team.</h2>
+    </div>
+    <div class="svc-groups">
+      <div class="svc-group">
+        <div class="svc-num">01</div>
+        <div class="svc-name">Brick Work &amp; Paving</div>
+        <p class="svc-desc">Brick laying for all jobs big or small — new builds, renovations, extensions, fireplaces, patios and retaining walls. Solid, lasting work.</p>
+      </div>
+      <div class="svc-group">
+        <div class="svc-num">02</div>
+        <div class="svc-name">Plastering &amp; Crack Repairs</div>
+        <p class="svc-desc">Indoor and outdoor plastering for whole homes or single walls. We find the root cause of cracks, repair properly, and leave a clean finish.</p>
+      </div>
+      <div class="svc-group">
+        <div class="svc-num">03</div>
+        <div class="svc-name">Screeding &amp; Wooden Floors</div>
+        <p class="svc-desc">Floor screeding to level and prepare surfaces. Wooden floor sanding and re-sealing to bring tired floors back to their original quality.</p>
+      </div>
+      <div class="svc-group">
+        <div class="svc-num">04</div>
+        <div class="svc-name">Plumbing</div>
+        <p class="svc-desc">Reliable plumbing repairs and installations for bathrooms, kitchens and swimming pools. Leaks, blockages, full installations — available 24 hours.</p>
+      </div>
+      <div class="svc-group">
+        <div class="svc-num">05</div>
+        <div class="svc-name">Tiling &amp; Cladding</div>
+        <p class="svc-desc">Wall and floor tiling for bathrooms, kitchens, outdoor areas and feature walls. We also install cladding and stone veneers.</p>
+      </div>
+      <div class="svc-group">
+        <div class="svc-num">06</div>
+        <div class="svc-name">Painting &amp; Waterproofing</div>
+        <p class="svc-desc">Exterior and interior painting, roof painting, damp proofing and waterproofing. We repair leaking roofs, patios, bathrooms and showers.</p>
+      </div>
+      <div class="svc-group">
+        <div class="svc-num">07</div>
+        <div class="svc-name">Skimming &amp; Ceilings</div>
+        <p class="svc-desc">Smooth skim plaster applied to walls and ceilings for a paint-ready surface. Ceiling installations, repairs and board replacements.</p>
+      </div>
+      <div class="svc-group">
+        <div class="svc-num">08</div>
+        <div class="svc-name">Drywalling &amp; Partitioning</div>
+        <p class="svc-desc">Drywall for internal walls, partitions, design features, arches and eaves. Quick, clean and cost-effective space division.</p>
+      </div>
+      <div class="svc-group">
+        <div class="svc-num">09</div>
+        <div class="svc-name">Electrical Services</div>
+        <p class="svc-desc">General electrical work including lighting, downlights, DB boards, appliance installations and swimming pool pumps.</p>
+      </div>
+      <div class="svc-group">
+        <div class="svc-num">10</div>
+        <div class="svc-name">Built-in Cupboards</div>
+        <p class="svc-desc">Custom built-in cupboards and storage solutions for bedrooms, kitchens and living areas. Designed to fit your space.</p>
+      </div>
+      <div class="svc-group">
+        <div class="svc-num">11</div>
+        <div class="svc-name">Bathroom &amp; Kitchen Renovations</div>
+        <p class="svc-desc">Complete remodels from gut to finished — waterproof, tile, plumb and paint. We handle the whole job so you don't have to manage five contractors.</p>
+      </div>
+      <div class="svc-group">
+        <div class="svc-num">12</div>
+        <div class="svc-name">Construction &amp; Extensions</div>
+        <p class="svc-desc">New rooms, garages, house extensions and full construction projects across Cape Town. Built properly, from the ground up.</p>
+      </div>
+    </div>
+    <div class="svc-cta-row">
+      <a href="tel:+27848004749"           class="btn btn-rust">Call for a quote</a>
+      <a href="https://wa.me/+27848004749" class="btn btn-green">WhatsApp</a>
+      <p>Not sure what you need? Call and we'll advise you honestly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     MID BANNER
+════════════════════════════════ -->
+<div id="banner">
+  <img class="banner-img"
+       src="https://www.alecktherenovator.co.za/images/workingonroofdpeak.png"
+       alt="Aleck's crew working near Devil's Peak, Cape Town"
+       loading="lazy">
+  <div class="banner-overlay">
+    <div class="banner-text">
+      <p class="banner-quote">"Our goal is to remodel your home beautifully, while making the process effortless and enjoyable."</p>
+      <p class="banner-attr">— Aleck Taziveyi, Founder &amp; Director</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     GALLERY
+════════════════════════════════ -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="gallery-hdr">
+      <div>
+        <span class="label">Recent Projects</span>
+        <h2 style="margin-top:6px;">Work speaks for itself.</h2>
+      </div>
+      <div class="gallery-filters">
+        <button class="gf-btn active" onclick="filterGal('all',this)">All</button>
+        <button class="gf-btn" onclick="filterGal('braai',this)">Patio &amp; Braai</button>
+        <button class="gf-btn" onclick="filterGal('bath',this)">Bathroom</button>
+        <button class="gf-btn" onclick="filterGal('tile',this)">Tiling</button>
+        <button class="gf-btn" onclick="filterGal('brick',this)">Brickwork</button>
+        <button class="gf-btn" onclick="filterGal('paint',this)">Painting</button>
+        <button class="gf-btn" onclick="filterGal('water',this)">Waterproofing</button>
+        <button class="gf-btn" onclick="filterGal('floor',this)">Floors</button>
+        <button class="gf-btn" onclick="filterGal('ext',this)">Exterior</button>
+      </div>
+    </div>
+    <div class="gallery-masonry" id="gal-grid">
+
+      <div class="g-item show" data-cat="braai" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/patio_to_braai_room_1.jpg" alt="Patio to braai room conversion" loading="lazy">
+        <div class="g-item-badge">Braai Room</div>
+        <div class="g-item-cap">Patio to braai room conversion</div>
+      </div>
+      <div class="g-item show" data-cat="bath" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/bathroom_gut_9.jpg" alt="Bathroom renovation in progress" loading="lazy">
+        <div class="g-item-badge">Bathroom</div>
+        <div class="g-item-cap">Full bathroom remodel</div>
+      </div>
+      <div class="g-item show" data-cat="brick" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/Brickwork.jpg" alt="Brickwork and plastering Cape Town" loading="lazy">
+        <div class="g-item-badge">Brickwork</div>
+        <div class="g-item-cap">Brickwork and plastering</div>
+      </div>
+      <div class="g-item show" data-cat="braai" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/patio_to_braai_room_4.jpg" alt="Patio renovation Cape Town" loading="lazy">
+        <div class="g-item-badge">Braai Room</div>
+        <div class="g-item-cap">Brickwork and tiling in progress</div>
+      </div>
+      <div class="g-item show" data-cat="bath" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/bathroom_retile_4.jpg" alt="Bathroom retile Cape Town" loading="lazy">
+        <div class="g-item-badge">Bathroom</div>
+        <div class="g-item-cap">Bathroom makeover — fresh tiling</div>
+      </div>
+      <div class="g-item show" data-cat="paint" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/outdoor_refresh_1.jpg" alt="Exterior painting Cape Town" loading="lazy">
+        <div class="g-item-badge">Painting</div>
+        <div class="g-item-cap">Exterior repaint and refresh</div>
+      </div>
+      <div class="g-item show" data-cat="braai" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/patio_to_braai_room_7.jpg" alt="Completed braai room" loading="lazy">
+        <div class="g-item-badge">Braai Room</div>
+        <div class="g-item-cap">Completed braai room</div>
+      </div>
+      <div class="g-item show" data-cat="water" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/entrance_repair.jpg" alt="Waterproofing Cape Town" loading="lazy">
+        <div class="g-item-badge">Waterproofing</div>
+        <div class="g-item-cap">Entrance repair before waterproofing</div>
+      </div>
+      <div class="g-item show" data-cat="bath" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/bathroom_gut_5.jpg" alt="Bathroom gut renovation" loading="lazy">
+        <div class="g-item-badge">Bathroom</div>
+        <div class="g-item-cap">Bathroom — tiling complete</div>
+      </div>
+      <div class="g-item show" data-cat="tile" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/bathroom_tiling_1.jpg" alt="Bathroom tiling" loading="lazy">
+        <div class="g-item-badge">Tiling</div>
+        <div class="g-item-cap">Bathroom wall tiling</div>
+      </div>
+      <div class="g-item show" data-cat="ext" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/house_exterior_repair_4.jpg" alt="Exterior touch-up Cape Town" loading="lazy">
+        <div class="g-item-badge">Exterior</div>
+        <div class="g-item-cap">House exterior renovation</div>
+      </div>
+      <div class="g-item show" data-cat="braai" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/patio_to_braai_room_9.jpg" alt="Braai room finished" loading="lazy">
+        <div class="g-item-badge">Braai Room</div>
+        <div class="g-item-cap">Finished braai room — ready to use</div>
+      </div>
+      <div class="g-item show" data-cat="floor" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/wooden_floor_sanding_1.jpg" alt="Wooden floor sanding Cape Town" loading="lazy">
+        <div class="g-item-badge">Floors</div>
+        <div class="g-item-cap">Wooden floor sanding</div>
+      </div>
+      <div class="g-item show" data-cat="brick" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/Brickwork_and_Lintel.jpg" alt="Brickwork and lintel" loading="lazy">
+        <div class="g-item-badge">Brickwork</div>
+        <div class="g-item-cap">Brickwork and lintel installation</div>
+      </div>
+      <div class="g-item show" data-cat="paint" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/repaint_1.jpg" alt="Crack repair and repaint" loading="lazy">
+        <div class="g-item-badge">Painting</div>
+        <div class="g-item-cap">Crack repair and repaint</div>
+      </div>
+      <div class="g-item show" data-cat="water" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/entance_waterproof.jpg" alt="Waterproofing applied" loading="lazy">
+        <div class="g-item-badge">Waterproofing</div>
+        <div class="g-item-cap">Waterproofing applied</div>
+      </div>
+      <div class="g-item show" data-cat="tile" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/patio_tiling_1.jpg" alt="Patio tiling Cape Town" loading="lazy">
+        <div class="g-item-badge">Tiling</div>
+        <div class="g-item-cap">Outdoor patio tiling</div>
+      </div>
+      <div class="g-item show" data-cat="floor" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/wooden_floor_sanding_4.jpg" alt="Floor sanding and sealing" loading="lazy">
+        <div class="g-item-badge">Floors</div>
+        <div class="g-item-cap">Sanded and re-sealed hardwood floors</div>
+      </div>
+      <div class="g-item show" data-cat="ext" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/roof_painting_1.jpg" alt="Roof painting Cape Town" loading="lazy">
+        <div class="g-item-badge">Roof Painting</div>
+        <div class="g-item-cap">Roof painting — Cape Town</div>
+      </div>
+      <div class="g-item show" data-cat="bath" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/bathroom_retile_1.jpg" alt="Bathroom retile" loading="lazy">
+        <div class="g-item-badge">Bathroom</div>
+        <div class="g-item-cap">Bathroom makeover</div>
+      </div>
+      <div class="g-item show" data-cat="paint" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/outdoor_refresh_3.jpg" alt="Painting in progress" loading="lazy">
+        <div class="g-item-badge">Painting</div>
+        <div class="g-item-cap">Exterior — painting in progress</div>
+      </div>
+      <div class="g-item show" data-cat="ext" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/patio_refresh_1.jpg" alt="Patio refresh" loading="lazy">
+        <div class="g-item-badge">Patio Refresh</div>
+        <div class="g-item-cap">Patio repaint and refresh</div>
+      </div>
+      <div class="g-item show" data-cat="floor" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/decking.jpg" alt="Decking Cape Town" loading="lazy">
+        <div class="g-item-badge">Decking</div>
+        <div class="g-item-cap">Outdoor decking installation</div>
+      </div>
+      <div class="g-item show" data-cat="ext" onclick="openLb(this)">
+        <img src="https://www.alecktherenovator.co.za/images/verandah_refresh_1.jpg" alt="Veranda makeover Cape Town" loading="lazy">
+        <div class="g-item-badge">Veranda</div>
+        <div class="g-item-cap">Veranda makeover</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lb" onclick="closeLb()">
+  <button id="lb-x" onclick="closeLb()">✕</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<!-- ════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════ -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="test-hdr">
+      <span class="label">Client Reviews</span>
+      <span class="rule" style="margin-top:12px;"></span>
+      <h2>In their own words.</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <p class="test-q">"I use Aleck to install ceilings, paint the interior and exterior of hostels at a boarding school. He has a team that helps him, and he manages them well. He is professional, reliable, and he has never disappointed me. The prices he charges are reasonable, he delivers neat work and cleans up after himself."</p>
+        <div class="test-meta">
+          <span class="test-stars">★★★★★</span>
+          <span class="test-role">Renovations Client</span>
+          <span class="test-service">Ceilings &amp; Interior/Exterior Painting</span>
+        </div>
+      </div>
+      <div class="test-card">
+        <p class="test-q">"I hired Aleck to extend my house and he did an excellent job. I was very impressed with the outcome. The quality of his work is outstanding — very professional, reliable, honest, hardworking, affordable and easy to deal with. I would highly recommend his services."</p>
+        <div class="test-meta">
+          <span class="test-stars">★★★★★</span>
+          <span class="test-role">Building Client</span>
+          <span class="test-service">House Extension &amp; Construction</span>
+        </div>
+      </div>
+      <div class="test-card">
+        <p class="test-q">"I used Aleck to install a wall, plastering, and painting the interior and exterior of the house. He is professional, reliable, and delivers quality work. He works promptly, charges reasonable prices, and his workmanship is good. He cleans up after himself."</p>
+        <div class="test-meta">
+          <span class="test-stars">★★★★★</span>
+          <span class="test-role">Masonry Client</span>
+          <span class="test-service">Wall, Plastering &amp; Painting</span>
+        </div>
+      </div>
+    </div>
+    <div class="ref-strip">
+      <div class="ref-strip-hdr">
+        <span class="label">Reference Letters</span>
+        <p>Real written references from satisfied clients — click to view.</p>
+      </div>
+      <div class="ref-photos">
+        <div class="ref-thumb" onclick="openLbSrc('https://www.alecktherenovator.co.za/images/ref_1.jpg', 'Reference letter 1')" title="View reference letter">
+          <img src="https://www.alecktherenovator.co.za/images/ref_1.jpg" alt="Client reference letter 1" loading="lazy">
+        </div>
+        <div class="ref-thumb" onclick="openLbSrc('https://www.alecktherenovator.co.za/images/ref_2.jpg', 'Reference letter 2')" title="View reference letter">
+          <img src="https://www.alecktherenovator.co.za/images/ref_2.jpg" alt="Client reference letter 2" loading="lazy">
+        </div>
+        <div class="ref-thumb" onclick="openLbSrc('https://www.alecktherenovator.co.za/images/ref_3.jpg', 'Reference letter 3')" title="View reference letter">
+          <img src="https://www.alecktherenovator.co.za/images/ref_3.jpg" alt="Client reference letter 3" loading="lazy">
+        </div>
+        <div class="ref-thumb" onclick="openLbSrc('https://www.alecktherenovator.co.za/images/ref_4.jpg', 'Reference letter 4')" title="View reference letter">
+          <img src="https://www.alecktherenovator.co.za/images/ref_4.jpg" alt="Client reference letter 4" loading="lazy">
+        </div>
+        <div class="ref-thumb" onclick="openLbSrc('https://www.alecktherenovator.co.za/images/ref_5.jpg', 'Reference letter 5')" title="View reference letter">
+          <img src="https://www.alecktherenovator.co.za/images/ref_5.jpg" alt="Client reference letter 5" loading="lazy">
+        </div>
+        <div class="ref-thumb" onclick="openLbSrc('https://www.alecktherenovator.co.za/images/ref_6.jpg', 'Reference letter 6')" title="View reference letter">
+          <img src="https://www.alecktherenovator.co.za/images/ref_6.jpg" alt="Client reference letter 6" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div class="google-strip">
+      <a href="https://www.google.com/search?q=Aleck+the+Renovator+Cape+Town+reviews" target="_blank" rel="noopener" style="text-decoration:none; display:contents;">
+        <div class="g-num" style="text-decoration:underline; text-underline-offset:5px; text-decoration-color:rgba(255,255,255,0.25);">4,929</div>
+      </a>
+      <div class="g-details">
+        <div class="g-stars">★★★★★</div>
+        <div class="g-text">Verified Google reviews — Aleck the Renovator, Cape Town</div>
+      </div>
+      <a href="https://www.google.com/search?q=Aleck+the+Renovator+Cape+Town+reviews" target="_blank" rel="noopener" class="btn btn-white">Read Google Reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     ABOUT / WHY
+════════════════════════════════ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-img-col">
+        <img class="about-img-main"
+             src="https://www.alecktherenovator.co.za/images/workingonroofdpeak.png"
+             alt="Aleck's team working near Devil's Peak, Cape Town"
+             loading="lazy">
+        <div class="about-year-tag">
+          <span class="yr">2010</span>
+          <span class="yr-lbl">Founded</span>
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="label" style="color:rgba(255,255,255,0.4);">About Aleck</span>
+        <h2>A real person. A real team. Real Cape Town work.</h2>
+        <p>Aleck Taziveyi founded this company in 2010 and has been doing honest renovation work across Cape Town ever since. No call centres, no subcontractor lottery — when you call Aleck, you get Aleck.</p>
+        <p>We can assist with all the details of your project, from a single cracked wall to a full home extension. Our long list of satisfied clients is available on request.</p>
+        <ul class="about-list">
+          <li>Founded in 2010</li>
+          <li>Quality workmanship</li>
+          <li>Experienced team</li>
+          <li>Affordable pricing</li>
+          <li>Professional &amp; reliable</li>
+          <li>Cleans up after every job</li>
+          <li>Honest, no hidden costs</li>
+          <li>References on request</li>
+        </ul>
+        <div class="about-btns">
+          <a href="tel:+27848004749"           class="btn btn-rust">Call 084 800 4749</a>
+          <a href="https://wa.me/+27848004749" class="btn btn-green">WhatsApp Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     LOCATIONS
+════════════════════════════════ -->
+<section id="locations">
+  <div class="wrap">
+    <div class="loc-header">
+      <span class="label">Where We Work</span>
+      <span class="rule" style="margin-top:12px;"></span>
+      <h2>We come to you, across Cape Town.</h2>
+      <p>We serve homeowners, landlords, property managers and businesses throughout the greater Cape Town metro area.</p>
+    </div>
+    <div class="loc-cloud">
+      <span class="loc-tag">Constantia</span>
+      <span class="loc-tag">Claremont</span>
+      <span class="loc-tag">Hout Bay</span>
+      <span class="loc-tag">Plumstead</span>
+      <span class="loc-tag">Kenilworth</span>
+      <span class="loc-tag">Rondebosch</span>
+      <span class="loc-tag">Cape Town CBD</span>
+      <span class="loc-tag">Observatory</span>
+      <span class="loc-tag">Southfield</span>
+      <span class="loc-tag">Mowbray</span>
+      <span class="loc-tag">Newlands</span>
+      <span class="loc-tag">Wynberg</span>
+      <span class="loc-tag">Woodstock</span>
+      <span class="loc-tag">Kirstenhof</span>
+      <span class="loc-tag">Bergvliet</span>
+      <span class="loc-tag">Bishopscourt</span>
+      <span class="loc-tag">Diep River</span>
+      <span class="loc-tag">Heathfield</span>
+      <span class="loc-tag">Lansdowne</span>
+      <span class="loc-tag">Meadowridge</span>
+      <span class="loc-tag">Retreat</span>
+      <span class="loc-tag">Rondebosch East</span>
+      <span class="loc-tag">Rosebank</span>
+      <span class="loc-tag">Steenberg</span>
+      <span class="loc-tag">Tokai</span>
+      <span class="loc-tag">Durbanville</span>
+      <span class="loc-tag">Parow North</span>
+      <span class="loc-tag">Brackenfell</span>
+      <span class="loc-tag">Ridgeworth</span>
+    </div>
+    <div class="loc-footer">
+      <p>Not sure if we cover your area? Call or WhatsApp and we'll let you know.</p>
+      <a href="https://wa.me/+27848004749" class="btn btn-moss">Ask on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     CONTACT
+════════════════════════════════ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="label">Get in Touch</span>
+        <h2>Let's talk about your project.</h2>
+        <p class="intro">
+          Call or WhatsApp Aleck directly — he picks up.
+          No call centres, no automated responses.
+          Just a straight conversation about what you need done.
+        </p>
+        <div class="contact-rows">
+          <div class="contact-row">
+            <div class="cr-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 9.8 19.79 19.79 0 01.86 1.18 2 2 0 012.83 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l.98-.98a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <span class="cr-label">Phone</span>
+              <div class="cr-val"><a href="tel:+27848004749">084 800 4749</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="cr-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <div>
+              <span class="cr-label">WhatsApp</span>
+              <div class="cr-val"><a href="https://wa.me/+27848004749">+27 84 800 4749</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="cr-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <span class="cr-label">Address</span>
+              <div class="cr-val"><a href="https://maps.google.com/maps?q=1+Fenton+Rd+Salt+River+Cape+Town" target="_blank" rel="noopener" style="color:var(--rust);">1 Fenton Rd, Salt River, Cape Town, 7925</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="cr-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            </div>
+            <div>
+              <span class="cr-label">Email</span>
+              <div class="cr-val"><a href="mailto:info@alecktherenovator.co.za">info@alecktherenovator.co.za</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="cr-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </div>
+            <div>
+              <span class="cr-label">Facebook</span>
+              <div class="cr-val"><a href="https://www.facebook.com/Aleck-the-renovator-100830468848548" target="_blank" rel="noopener" style="color:var(--rust);">Follow us on Facebook</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="cr-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <span class="cr-label">Hours</span>
+              <div class="cr-val">Open 24 hours, 7 days a week</div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-btns">
+          <a href="tel:+27848004749"           class="btn btn-rust">Call Now</a>
+          <a href="https://wa.me/+27848004749" class="btn btn-green">WhatsApp</a>
+        </div>
+      </div>
+      <div class="contact-form-box">
+        <p class="cfb-title">Request a Free Quote</p>
+        <p class="cfb-sub">Fill in your details and we'll get back to you. Or just call — 084 800 4749.</p>
+        <form id="qform" onsubmit="sendForm(event)">
+          <div class="frow">
+            <div class="fg">
+              <label for="fn">Your Name *</label>
+              <input type="text" id="fn" name="name" placeholder="Jane Smith" required>
+            </div>
+            <div class="fg">
+              <label for="fp">Phone Number *</label>
+              <input type="tel" id="fp" name="phone" placeholder="082 000 0000" required>
+            </div>
+          </div>
+          <div class="fg">
+            <label for="fe">Email Address</label>
+            <input type="email" id="fe" name="email" placeholder="jane@email.com">
+          </div>
+          <div class="fg">
+            <label for="fs">Service Needed *</label>
+                  <select id="fs" name="service" required>
+              <option value="">Select a service…</option>
+              <option>Brick Work &amp; Paving</option>
+              <option>Plastering &amp; Crack Repairs</option>
+              <option>Screeding &amp; Wooden Floors</option>
+              <option>Plumbing</option>
+              <option>Tiling &amp; Cladding</option>
+              <option>Painting &amp; Waterproofing</option>
+              <option>Skimming &amp; Ceilings</option>
+              <option>Drywalling &amp; Partitioning</option>
+              <option>Electrical Services</option>
+              <option>Built-in Cupboards</option>
+              <option>Bathroom &amp; Kitchen Renovations</option>
+              <option>Construction &amp; Extensions</option>
+              <option>Other / Not sure</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="fm">Tell us about your project *</label>
+            <textarea id="fm" name="message" placeholder="Describe what you need done, where you are, and any relevant details…" required></textarea>
+          </div>
+          <button type="submit" class="fsub">Send Quote Request via WhatsApp →</button>
+        </form>
+        <div id="form-ok">
+          <p class="big">Message ready — opening WhatsApp</p>
+          <p>Your details are pre-filled. Just tap Send in WhatsApp.<br>Or <a href="tel:+27848004749">call 084 800 4749</a> directly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     FOOTER
+════════════════════════════════ -->
+<footer id="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-top">Aleck</span>
+          <span class="logo-sub">the Renovator · Cape Town</span>
+        </div>
+        <p>Professional renovation services across Cape Town since 2010. Plumbing, painting, waterproofing, tiling, brickwork and full renovations — handled properly, every time.</p>
+        <a href="https://wa.me/+27848004749" class="btn btn-green" style="font-size:0.82rem; padding:10px 18px;">WhatsApp a Quote</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Plumbing</a></li>
+          <li><a href="#services">Painting &amp; Waterproofing</a></li>
+          <li><a href="#services">Tiling &amp; Cladding</a></li>
+          <li><a href="#services">Brickwork &amp; Paving</a></li>
+          <li><a href="#services">Bathroom Renovations</a></li>
+          <li><a href="#services">Construction</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Aleck</a></li>
+          <li><a href="#gallery">Project Gallery</a></li>
+          <li><a href="#testimonials">Client Reviews</a></li>
+          <li><a href="#locations">Service Areas</a></li>
+          <li><a href="https://www.facebook.com/Aleck-the-renovator-100830468848548" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+27848004749">084 800 4749</a></li>
+          <li><a href="https://wa.me/+27848004749">WhatsApp</a></li>
+          <li><a href="mailto:info@alecktherenovator.co.za">Email us</a></li>
+          <li style="color:rgba(255,255,255,0.38); font-size:0.82rem;">1 Fenton Rd, Salt River<br>Cape Town, 7925</li>
+          <li style="color:rgba(255,255,255,0.38); font-size:0.82rem;">Open 24 hours</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-btm">
+      <span>© 2025 Aleck the Renovator · Salt River, Cape Town</span>
+      <span>Registered in South Africa · 084 800 4749</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════
+     STICKY MOBILE CTA
+════════════════════════════════ -->
+<div id="sticky">
+  <a href="tel:+27848004749"           class="btn btn-rust">Call Now</a>
+  <a href="https://wa.me/+27848004749" class="btn btn-green">WhatsApp</a>
+</div>
+
+<!-- ════════════════════════════════
+     SCRIPTS
+════════════════════════════════ -->
+<script>
+/* ── Mobile nav ── */
+function toggleNav(){ document.getElementById('mob-nav').classList.toggle('open'); }
+function closeNav(){ document.getElementById('mob-nav').classList.remove('open'); }
+
+/* ── Smooth scroll helper ── */
+function scrollTo(id){ var el = document.querySelector(id); if(el) el.scrollIntoView({behavior:'smooth'}); }
+
+/* ── Gallery filter ── */
+function filterGal(cat, btn){
+  document.querySelectorAll('.gf-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.g-item').forEach(function(el){
+    if(cat === 'all' || el.dataset.cat === cat){ el.classList.add('show'); }
+    else { el.classList.remove('show'); }
+  });
+}
+
+/* ── Lightbox ── */
+function openLb(el){
+  var img = el.querySelector('img');
+  document.getElementById('lb-img').src = img.src;
+  document.getElementById('lb-img').alt = img.alt;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function openLbSrc(src, alt){
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lb-img').alt = alt || '';
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLb(){
+  document.getElementById('lb').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLb(); });
+
+/* ── WhatsApp form ── */
+function sendForm(e){
+  e.preventDefault();
+  var name    = document.getElementById('fn').value;
+  var phone   = document.getElementById('fp').value;
+  var email   = document.getElementById('fe').value;
+  var service = document.getElementById('fs').value;
+  var msg     = document.getElementById('fm').value;
+  var text = 'Hi Aleck! I found your website and would like a quote.\n\n'
+           + 'Name: ' + name + '\n'
+           + 'Phone: ' + phone + '\n'
+           + (email ? 'Email: ' + email + '\n' : '')
+           + 'Service needed: ' + service + '\n\n'
+           + msg;
+  var wa = 'https://wa.me/+27848004749?text=' + encodeURIComponent(text);
+  document.getElementById('qform').style.display = 'none';
+  document.getElementById('form-ok').style.display = 'block';
+  setTimeout(function(){ window.open(wa, '_blank'); }, 400);
+}
+</script>
+
+<!-- ════════════════════════════════
+     SVELTIA CMS CONTENT LOADER
+════════════════════════════════ -->
+<script>
+(function(){
+  var files = ['general','hero','services','testimonials','seo'];
+  var ts = '?_=' + Date.now();
+  Promise.all(
+    files.map(function(f){
+      return fetch('content/' + f + '.json' + ts)
+        .then(function(r){ return r.ok ? r.json() : {}; })
+        .catch(function(){ return {}; });
+    })
+  ).then(function(results){
+    var d = Object.assign.apply(Object, [{}].concat(results));
+
+    /* helpers */
+    function setText(sel, val){ if(!val) return; var el = document.querySelector(sel); if(el) el.textContent = val; }
+    function setHtml(sel, val){ if(!val) return; var el = document.querySelector(sel); if(el) el.innerHTML = val; }
+    function setCMS(key, val){ setText('[data-cms="' + key + '"]', val); }
+
+    /* WhatsApp — rewrite all wa.me links */
+    if(d.whatsapp_number){
+      var waBase = 'https://wa.me/' + d.whatsapp_number;
+      var waMsg  = d.whatsapp_message ? '?text=' + encodeURIComponent(d.whatsapp_message) : '';
+      document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){
+        a.href = waBase + waMsg;
+      });
+    }
+
+    /* phone */
+    if(d.phone_number){
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(a){ a.href = 'tel:' + d.phone_number; });
+      document.querySelectorAll('[data-cms="phone-display"]').forEach(function(el){ el.textContent = d.phone_display || d.phone_number; });
+    }
+
+    /* SEO / OG */
+    if(d.seo_title){ document.title = d.seo_title; var m = document.querySelector('meta[property="og:title"]'); if(m) m.content = d.seo_title; }
+    if(d.seo_description){ var dm = document.querySelector('meta[name="description"]'); if(dm) dm.content = d.seo_description; }
+
+    /* hero */
+    setCMS('hero-h1', d.hero_h1);
+    setCMS('hero-copy', d.hero_copy);
+  }).catch(function(){});
+})();
+</script>
+</body>
+</html>
+hone_number; });
+      document.querySelectorAll('[data-cms="phone-display"]').forEach(function(el){ el.textContent = d.phone_display || d.phone_number; });
+    }
+
+    /* SEO / OG */
+    if(d.seo_title){ document.title = d.seo_title; var m = document.querySelector('meta[property="og:title"]'); if(m) m.content = d.seo_title; }
+    if(d.seo_description){ var dm = document.querySelector('meta[name="description"]'); if(dm) dm.content = d.seo_description; }
+
+    /* hero */
+    setCMS('hero-h1', d.hero_h1);
+    setCMS('hero-copy', d.hero_copy);
+  }).catch(function(){});
+})();
+</script>
+</body>
+</html>

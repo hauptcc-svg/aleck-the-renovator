@@ -1,8 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Moss green background square -->
-  <rect width="64" height="64" rx="10" fill="#22402e"/>
-  <!-- Stylised "A" mark — two angled strokes meeting at apex, crossbar in rust -->
-  <line x1="10" y1="52" x2="32" y2="14" stroke="#f1e9d6" stroke-width="6" stroke-linecap="round"/>
-  <line x1="54" y1="52" x2="32" y2="14" stroke="#f1e9d6" stroke-width="6" stroke-linecap="round"/>
-  <line x1="19" y1="38" x2="45" y2="38" stroke="#b84c18" stroke-width="5" stroke-linecap="round"/>
+  <defs>
+    <clipPath id="fav-diamond">
+      <polygon points="32,6 58,32 32,58 6,32"/>
+    </clipPath>
+  </defs>
+  <!-- Background -->
+  <rect width="64" height="64" fill="#2b2b2b"/>
+  <!-- Diamond fill -->
+  <polygon points="32,6 58,32 32,58 6,32" fill="#D4801A"/>
+  <!-- Brick rows -->
+  <g clip-path="url(#fav-diamond)" fill="#A85F10" opacity="0.8">
+    <rect x="6"  y="8"  width="22" height="6.5"/>
+    <rect x="30" y="8"  width="22" height="6.5"/>
+    <rect x="17" y="16" width="22" height="6.5"/>
+    <rect x="41" y="16" width="22" height="6.5"/>
+    <rect x="-6" y="16" width="21" height="6.5"/>
+    <rect x="6"  y="24" width="22" height="6.5"/>
+    <rect x="30" y="24" width="22" height="6.5"/>
+    <rect x="17" y="32" width="22" height="6.5"/>
+    <rect x="41" y="32" width="22" height="6.5"/>
+    <rect x="-6" y="32" width="21" height="6.5"/>
+    <rect x="6"  y="40" width="22" height="6.5"/>
+    <rect x="30" y="40" width="22" height="6.5"/>
+    <rect x="17" y="48" width="22" height="6.5"/>
+    <rect x="41" y="48" width="22" height="6.5"/>
+  </g>
+  <!-- Diamond border -->
+  <polygon points="32,6 58,32 32,58 6,32" fill="none" stroke="#E8924A" stroke-width="1.5" opacity="0.5"/>
+  <!-- 3 dots -->
+  <circle cx="26" cy="3" r="2" fill="#D4801A"/>
+  <circle cx="32" cy="1" r="2" fill="#D4801A"/>
+  <circle cx="38" cy="3" r="2" fill="#D4801A"/>
 </svg>

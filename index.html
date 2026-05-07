@@ -33,18 +33,18 @@
 
     /* ─── TOKENS ─── */
     :root {
-      --stone:      #f1e9d6;
-      --stone-dark: #e6dcca;
-      --parchment:  #faf6ee;
-      --ink:        #17201a;
-      --moss:       #22402e;
-      --moss-mid:   #2d5c3e;
-      --sage:       #5a8c68;
-      --rust:       #b84c18;
-      --rust-dk:    #943a10;
-      --sand:       #dfd3b8;
-      --bark:       #4a3a28;
-      --warm-grey:  #5a4a38;
+      --stone:      #f0ede8;
+      --stone-dark: #e4e0da;
+      --parchment:  #f6f4f1;
+      --ink:        #1a1a1a;
+      --moss:       #2b2b2b;
+      --moss-mid:   #3d3d3d;
+      --sage:       #8a8480;
+      --rust:       #D4801A;
+      --rust-dk:    #B86A10;
+      --sand:       #d8d4ce;
+      --bark:       #2e2b28;
+      --warm-grey:  #5c5854;
       --white:      #ffffff;
       --ff-display: 'Playfair Display', 'Times New Roman', Georgia, serif;
       --ff-body:    'Source Sans 3', system-ui, -apple-system, sans-serif;
@@ -52,6 +52,29 @@
       --max:        1200px;
       --g:          clamp(20px, 4vw, 40px);
     }
+    /* ─── SHADOW SYSTEM ─── */
+    :root {
+      --shadow-sm: 0 2px 10px rgba(26,26,26,0.08);
+      --shadow-md: 0 8px 32px rgba(26,26,26,0.13);
+      --shadow-lg: 0 20px 60px rgba(26,26,26,0.2);
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+    .reveal-d4 { transition-delay: 0.4s; }
+    .reveal-d5 { transition-delay: 0.5s; }
+
+    /* ─── OVERFLOW ─── */
+    body { overflow-x: hidden; }
+
 
     body {
       font-family: var(--ff-body);
@@ -109,20 +132,20 @@
       font-size: 0.9rem;
       letter-spacing: 0.02em;
       padding: 13px 26px;
-      border-radius: 3px;
+      border-radius: 7px;
       transition: all 0.18s;
       white-space: nowrap;
     }
     .btn-rust   { background: var(--rust); color: #fff; }
-    .btn-rust:hover { background: var(--rust-dk); transform: translateY(-1px); }
+    .btn-rust:hover { background: var(--rust-dk); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(212,128,26,0.35); }
     .btn-moss   { background: var(--moss); color: #fff; }
-    .btn-moss:hover { background: #1a3322; transform: translateY(-1px); }
+    .btn-moss:hover { background: #1a1a1a; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(43,43,43,0.35); }
     .btn-green  { background: #25d366; color: #fff; }
-    .btn-green:hover { background: #1fbb58; transform: translateY(-1px); }
+    .btn-green:hover { background: #1fbb58; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,0.35); }
     .btn-outline { border: 1.5px solid var(--sand); color: var(--bark); background: transparent; }
-    .btn-outline:hover { border-color: var(--rust); color: var(--rust); }
+    .btn-outline:hover { border-color: var(--rust); color: var(--rust); transform: translateY(-2px); }
     .btn-white  { background: #fff; color: var(--ink); }
-    .btn-white:hover { background: var(--rust); color: #fff; }
+    .btn-white:hover { background: var(--rust); color: #fff; transform: translateY(-2px); }
 
     /* ─── DIVIDER ─── */
     .rule { width: 48px; height: 2px; background: var(--rust); display: block; margin-bottom: 20px; }
@@ -134,9 +157,13 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: var(--moss);
+      background: rgba(43,43,43,0.97);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: box-shadow 0.3s;
     }
+    #site-header.scrolled { box-shadow: 0 4px 28px rgba(0,0,0,0.28); }
     .hdr-inner {
       display: flex;
       align-items: center;
@@ -200,7 +227,7 @@
     .hamburger span { display: block; width: 22px; height: 1.5px; background: rgba(255,255,255,0.85); }
     #mob-nav {
       display: none;
-      background: #1a3322;
+      background: #1a1a1a;
       padding: 20px var(--g) 24px;
     }
     #mob-nav.open { display: block; }
@@ -224,7 +251,29 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       overflow: hidden;
+      position: relative;
     }
+    #hero::before {
+      content: '';
+      position: absolute;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,128,26,0.18) 0%, transparent 65%);
+      top: -200px; right: 40%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    #hero::after {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,128,26,0.1) 0%, transparent 65%);
+      bottom: -100px; left: 10%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-left { position: relative; z-index: 1; }
     .hero-left {
       display: flex;
       flex-direction: column;
@@ -241,7 +290,7 @@
     }
     .hero-eyebrow .label { color: rgba(255,255,255,0.45); }
     .hero-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--rust); flex-shrink: 0; }
-    .hero-stars { color: #e8b84b; font-size: 0.82rem; letter-spacing: 1px; }
+    .hero-stars { color: #c8a010; font-size: 0.82rem; letter-spacing: 1px; }
     .hero-h1 {
       font-family: var(--ff-display);
       font-size: clamp(2.4rem, 5.5vw, 4rem);
@@ -252,7 +301,7 @@
     }
     .hero-h1 em {
       font-style: italic;
-      color: var(--stone);
+      color: var(--rust);
     }
     .hero-copy {
       font-size: 1.05rem;
@@ -325,8 +374,9 @@
        TRUST BAR
     ═══════════════════════════════════ */
     #trust-bar {
-      background: var(--rust);
+      background: var(--ink);
       padding: 14px 0;
+      border-bottom: 2px solid var(--rust);
     }
     .trust-bar-row {
       display: flex;
@@ -339,13 +389,13 @@
       font-family: var(--ff-body);
       font-size: 0.82rem;
       font-weight: 600;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255,255,255,0.75);
       padding: 5px 22px;
       white-space: nowrap;
       letter-spacing: 0.02em;
     }
-    .ti + .ti { border-left: 1px solid rgba(255,255,255,0.3); }
-    .ti strong { color: #fff; }
+    .ti + .ti { border-left: 1px solid rgba(255,255,255,0.15); }
+    .ti strong { color: var(--rust); }
 
     /* ═══════════════════════════════════
        EMERGENCY BAR
@@ -396,6 +446,16 @@
     #wayfinding {
       background: var(--ink);
       padding: 64px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    #wayfinding::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(43,43,43,0.35) 0%, transparent 65%);
+      top: -200px; right: -100px;
+      pointer-events: none;
     }
     .wf-intro {
       text-align: left;
@@ -426,9 +486,10 @@
       padding: 32px 24px 28px;
       border-right: 1px solid rgba(255,255,255,0.08);
       cursor: pointer;
-      transition: background 0.18s;
+      transition: background 0.22s, transform 0.22s, box-shadow 0.22s;
       position: relative;
     }
+    .wf-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(212,128,26,0.2); }
     .wf-card:last-child { border-right: none; }
     .wf-card:hover { background: var(--rust); }
     .wf-card:hover .wf-label { color: rgba(255,255,255,0.55); }
@@ -491,7 +552,9 @@
     .svc-group {
       padding: 36px 40px 36px 0;
       border-bottom: 1px solid var(--sand);
+      transition: background 0.18s;
     }
+    .svc-group:hover { background: rgba(43,43,43,0.03); }
     .svc-group:nth-child(even) {
       padding: 36px 0 36px 40px;
       border-left: 1px solid var(--sand);
@@ -548,7 +611,7 @@
     .banner-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(23,32,26,0.82) 0%, rgba(23,32,26,0.3) 100%);
+      background: linear-gradient(90deg, rgba(26,26,26,0.82) 0%, rgba(26,26,26,0.3) 100%);
       display: flex;
       align-items: center;
       padding: 0 clamp(24px, 8vw, 100px);
@@ -633,10 +696,11 @@
       transition: transform 0.3s;
     }
     .g-item:hover img { transform: scale(1.04); }
+    .g-item:hover { box-shadow: 0 12px 32px rgba(26,26,26,0.22); }
     .g-item-cap {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      background: linear-gradient(transparent, rgba(23,32,26,0.8));
+      background: linear-gradient(transparent, rgba(26,26,26,0.8));
       padding: 24px 12px 10px;
       color: rgba(255,255,255,0.9);
       font-size: 0.75rem;
@@ -666,7 +730,7 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(17,26,20,0.95);
+      background: rgba(17,17,17,0.95);
       z-index: 9998;
       align-items: center;
       justify-content: center;
@@ -706,7 +770,10 @@
       background: var(--white);
       padding: 44px 36px 36px;
       position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.25s, transform 0.25s;
     }
+    .test-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
     .test-card::before {
       content: '\201C';
       font-family: var(--ff-display);
@@ -729,7 +796,7 @@
       z-index: 1;
     }
     .test-meta { display: flex; flex-direction: column; gap: 3px; }
-    .test-stars { color: #c49a28; font-size: 0.85rem; letter-spacing: 1px; }
+    .test-stars { color: #c8a010; font-size: 0.85rem; letter-spacing: 1px; }
     .test-role {
       font-family: var(--ff-mono);
       font-size: 0.68rem;
@@ -783,7 +850,7 @@
       content: 'View';
       position: absolute;
       inset: 0;
-      background: rgba(34,64,46,0.7);
+      background: rgba(43,43,43,0.7);
       color: #fff;
       font-family: var(--ff-mono);
       font-size: 0.62rem;
@@ -800,7 +867,7 @@
     /* Google review strip */
     .google-strip {
       margin-top: 40px;
-      background: var(--moss);
+      background: var(--ink);
       padding: 32px 36px;
       display: flex;
       align-items: center;
@@ -817,7 +884,7 @@
     .g-details {
       flex: 1;
     }
-    .g-stars { font-size: 1rem; color: #e8b84b; letter-spacing: 2px; }
+    .g-stars { font-size: 1rem; color: #c8a010; letter-spacing: 2px; }
     .g-text { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 3px; }
     .google-strip .btn { margin-left: auto; }
 
@@ -825,7 +892,7 @@
        ABOUT / WHY
     ═══════════════════════════════════ */
     #about {
-      background: var(--moss);
+      background: var(--ink);
       padding: 80px 0;
       color: #fff;
     }
@@ -849,6 +916,7 @@
       color: #fff;
       padding: 20px 24px;
       text-align: center;
+      box-shadow: var(--shadow-md);
     }
     .about-year-tag .yr {
       font-family: var(--ff-display);
@@ -929,14 +997,15 @@
       font-size: 0.82rem;
       font-weight: 600;
       padding: 7px 14px;
+      border-radius: 4px;
       border: 1px solid var(--sand);
       color: var(--bark);
       background: var(--parchment);
-      transition: all 0.15s;
+      transition: all 0.18s;
     }
     .loc-tag:hover {
-      background: var(--moss);
-      border-color: var(--moss);
+      background: var(--ink);
+      border-color: var(--ink);
       color: #fff;
     }
     .loc-footer {
@@ -1017,6 +1086,7 @@
       background: var(--white);
       padding: 44px 40px;
       border-top: 3px solid var(--rust);
+      box-shadow: var(--shadow-md);
     }
     .cfb-title {
       font-family: var(--ff-display);
@@ -1086,7 +1156,7 @@
        FOOTER
     ═══════════════════════════════════ */
     #footer {
-      background: #111b15;
+      background: #111111;
       color: rgba(255,255,255,0.6);
       padding: 56px 0 0;
     }
@@ -1141,7 +1211,7 @@
       left: 0;
       right: 0;
       z-index: 200;
-      background: #111b15;
+      background: #111111;
       border-top: 1px solid rgba(255,255,255,0.08);
       padding: 10px 16px;
       gap: 10px;
@@ -1202,9 +1272,44 @@
 ════════════════════════════════ -->
 <header id="site-header">
   <div class="wrap hdr-inner">
-    <a href="#home" class="logo">
-      <span class="logo-top">Aleck</span>
-      <span class="logo-sub">the Renovator · Cape Town</span>
+    <a href="#home" class="logo" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 60" width="38" height="44" aria-label="Aleck the Renovator logo mark">
+        <defs>
+          <clipPath id="nc-diamond">
+            <polygon points="26,4 50,28 26,52 2,28"/>
+          </clipPath>
+        </defs>
+        <!-- Three dots above diamond -->
+        <circle cx="18" cy="2" r="2" fill="#D4801A"/>
+        <circle cx="26" cy="0" r="2" fill="#D4801A"/>
+        <circle cx="34" cy="2" r="2" fill="#D4801A"/>
+        <!-- Diamond base -->
+        <polygon points="26,4 50,28 26,52 2,28" fill="#D4801A"/>
+        <!-- Brick rows clipped to diamond -->
+        <g clip-path="url(#nc-diamond)" fill="#A85F10" opacity="0.85">
+          <rect x="4"  y="6"  width="18" height="5.5"/>
+          <rect x="24" y="6"  width="18" height="5.5"/>
+          <rect x="14" y="13" width="18" height="5.5"/>
+          <rect x="34" y="13" width="18" height="5.5"/>
+          <rect x="-2" y="13" width="14" height="5.5"/>
+          <rect x="4"  y="20" width="18" height="5.5"/>
+          <rect x="24" y="20" width="18" height="5.5"/>
+          <rect x="14" y="27" width="18" height="5.5"/>
+          <rect x="34" y="27" width="18" height="5.5"/>
+          <rect x="-2" y="27" width="14" height="5.5"/>
+          <rect x="4"  y="34" width="18" height="5.5"/>
+          <rect x="24" y="34" width="18" height="5.5"/>
+          <rect x="14" y="41" width="18" height="5.5"/>
+          <rect x="34" y="41" width="18" height="5.5"/>
+          <rect x="-2" y="41" width="14" height="5.5"/>
+        </g>
+        <!-- Highlight edge lines (mortar) -->
+        <polygon points="26,4 50,28 26,52 2,28" fill="none" stroke="#E8924A" stroke-width="1" opacity="0.4"/>
+      </svg>
+      <span style="display:flex; flex-direction:column; line-height:1.1;">
+        <span style="font-family:'Playfair Display',serif; font-style:italic; font-weight:700; font-size:1.1rem; color:#fff; letter-spacing:0.02em; white-space:nowrap;">Aleck the Renovator</span>
+        <span style="font-family:'DM Mono',monospace; font-size:0.6rem; color:rgba(255,255,255,0.45); letter-spacing:0.12em; text-transform:uppercase; white-space:nowrap; margin-top:1px;">Cape Town · Est. 2010</span>
+      </span>
     </a>
     <nav class="hdr-nav">
       <a href="#wayfinding">Services</a>
@@ -1239,7 +1344,7 @@
 ════════════════════════════════ -->
 <section id="home">
   <div id="hero">
-    <div class="hero-left">
+    <div class="hero-left reveal">
       <div class="hero-eyebrow">
         <span class="label">Salt River, Cape Town · Est. 2010</span>
         <span class="hero-dot"></span>
@@ -1260,7 +1365,7 @@
       <div class="hero-trust">
         <div class="hero-trust-item">
           <a href="https://www.google.com/search?q=Aleck+the+Renovator+Cape+Town+reviews" target="_blank" rel="noopener" style="text-decoration:none;">
-            <span class="num" style="text-decoration:underline; text-underline-offset:4px; text-decoration-color:rgba(241,233,214,0.35);">4,929</span>
+            <span class="num" style="text-decoration:underline; text-underline-offset:4px; text-decoration-color:rgba(241,233,214,0.35);">4.9</span>
             <span class="lbl">Google Reviews</span>
           </a>
         </div>
@@ -1297,7 +1402,8 @@
     <div class="ti">Cape Town based</div>
     <div class="ti">Plumbing · Painting · Tiling · Renovations</div>
     <div class="ti">Free quote requests</div>
-    <div class="ti"><strong>4,929</strong> Google reviews ★★★★★</div>
+    <div class="ti" style="font-family:'Playfair Display',serif; font-style:italic; font-size:1.05rem; color:rgba(255,255,255,0.7); padding-right:20px;">"Dream it and we will build it"</div>
+    <div class="ti"><strong>4.9/5</strong> Google rating &nbsp;·&nbsp; <strong>29</strong> reviews ★★★★★</div>
   </div>
 </div>
 
@@ -1316,37 +1422,37 @@
      WAYFINDING
 ════════════════════════════════ -->
 <section id="wayfinding">
-  <div class="wf-intro">
+  <div class="wf-intro reveal">
     <span class="label" style="color:rgba(255,255,255,0.3);">Find your service</span>
     <h2>What brings you here?</h2>
     <p>Pick what you need — we'll tell you exactly how we can help.</p>
   </div>
   <div class="wf-grid">
-    <div class="wf-card" onclick="scrollTo('#services')">
+    <div class="wf-card reveal reveal-d1" onclick="scrollTo('#services')">
       <div class="wf-label">01 / Plumbing</div>
       <div class="wf-title">Got a leak or plumbing problem?</div>
       <div class="wf-hints">Burst pipe · Blocked drain<br>Bathroom or kitchen installation<br>Swimming pool plumbing</div>
       <span class="wf-arrow">→</span>
     </div>
-    <div class="wf-card" onclick="scrollTo('#services')">
+    <div class="wf-card reveal reveal-d2" onclick="scrollTo('#services')">
       <div class="wf-label">02 / Painting</div>
       <div class="wf-title">Damp walls, peeling paint or leaking roof?</div>
       <div class="wf-hints">Interior &amp; exterior painting<br>Waterproofing &amp; damp proofing<br>Roof painting &amp; repairs</div>
       <span class="wf-arrow">→</span>
     </div>
-    <div class="wf-card" onclick="scrollTo('#services')">
+    <div class="wf-card reveal reveal-d3" onclick="scrollTo('#services')">
       <div class="wf-label">03 / Tiling</div>
       <div class="wf-title">Renovating a bathroom or kitchen?</div>
       <div class="wf-hints">Wall &amp; floor tiling<br>Full bathroom remodels<br>Feature walls &amp; cladding</div>
       <span class="wf-arrow">→</span>
     </div>
-    <div class="wf-card" onclick="scrollTo('#services')">
+    <div class="wf-card reveal reveal-d4" onclick="scrollTo('#services')">
       <div class="wf-label">04 / Building</div>
       <div class="wf-title">Building, extending or repairing?</div>
       <div class="wf-hints">Brickwork &amp; paving<br>Extensions &amp; new rooms<br>Plastering &amp; crack repairs</div>
       <span class="wf-arrow">→</span>
     </div>
-    <div class="wf-card" onclick="scrollTo('#services')">
+    <div class="wf-card reveal reveal-d5" onclick="scrollTo('#services')">
       <div class="wf-label">05 / Maintenance</div>
       <div class="wf-title">General home maintenance?</div>
       <div class="wf-hints">Ceilings, skimming &amp; drywalling<br>Wooden floors &amp; screeding<br>Electrical · Cupboards</div>
@@ -1360,7 +1466,7 @@
 ════════════════════════════════ -->
 <section id="services">
   <div class="wrap">
-    <div class="svc-header">
+    <div class="svc-header reveal">
       <span class="label">Building &amp; Renovation Services — Cape Town</span>
       <span class="rule" style="margin-top:12px;"></span>
       <h2>Everything your home needs, under one team.</h2>
@@ -1444,7 +1550,7 @@
        alt="Aleck's crew working near Devil's Peak, Cape Town"
        loading="lazy">
   <div class="banner-overlay">
-    <div class="banner-text">
+    <div class="banner-text reveal">
       <p class="banner-quote">"Our goal is to remodel your home beautifully, while making the process effortless and enjoyable."</p>
       <p class="banner-attr">— Aleck Taziveyi, Founder &amp; Director</p>
     </div>
@@ -1456,7 +1562,7 @@
 ════════════════════════════════ -->
 <section id="gallery">
   <div class="wrap">
-    <div class="gallery-hdr">
+    <div class="gallery-hdr reveal">
       <div>
         <span class="label">Recent Projects</span>
         <h2 style="margin-top:6px;">Work speaks for itself.</h2>
@@ -1616,7 +1722,7 @@
       <h2>In their own words.</h2>
     </div>
     <div class="test-grid">
-      <div class="test-card">
+      <div class="test-card reveal">
         <p class="test-q">"I use Aleck to install ceilings, paint the interior and exterior of hostels at a boarding school. He has a team that helps him, and he manages them well. He is professional, reliable, and he has never disappointed me. The prices he charges are reasonable, he delivers neat work and cleans up after himself."</p>
         <div class="test-meta">
           <span class="test-stars">★★★★★</span>
@@ -1624,7 +1730,7 @@
           <span class="test-service">Ceilings &amp; Interior/Exterior Painting</span>
         </div>
       </div>
-      <div class="test-card">
+      <div class="test-card reveal reveal-d2">
         <p class="test-q">"I hired Aleck to extend my house and he did an excellent job. I was very impressed with the outcome. The quality of his work is outstanding — very professional, reliable, honest, hardworking, affordable and easy to deal with. I would highly recommend his services."</p>
         <div class="test-meta">
           <span class="test-stars">★★★★★</span>
@@ -1632,7 +1738,7 @@
           <span class="test-service">House Extension &amp; Construction</span>
         </div>
       </div>
-      <div class="test-card">
+      <div class="test-card reveal reveal-d3">
         <p class="test-q">"I used Aleck to install a wall, plastering, and painting the interior and exterior of the house. He is professional, reliable, and delivers quality work. He works promptly, charges reasonable prices, and his workmanship is good. He cleans up after himself."</p>
         <div class="test-meta">
           <span class="test-stars">★★★★★</span>
@@ -1670,7 +1776,7 @@
 
     <div class="google-strip">
       <a href="https://www.google.com/search?q=Aleck+the+Renovator+Cape+Town+reviews" target="_blank" rel="noopener" style="text-decoration:none; display:contents;">
-        <div class="g-num" style="text-decoration:underline; text-underline-offset:5px; text-decoration-color:rgba(255,255,255,0.25);">4,929</div>
+        <div class="g-num" style="text-decoration:underline; text-underline-offset:5px; text-decoration-color:rgba(255,255,255,0.25);">4.9★ / 29</div>
       </a>
       <div class="g-details">
         <div class="g-stars">★★★★★</div>
@@ -1697,7 +1803,7 @@
           <span class="yr-lbl">Founded</span>
         </div>
       </div>
-      <div class="about-content">
+      <div class="about-content reveal">
         <span class="label" style="color:rgba(255,255,255,0.4);">About Aleck</span>
         <h2>A real person. A real team. Real Cape Town work.</h2>
         <p>Aleck Taziveyi founded this company in 2010 and has been doing honest renovation work across Cape Town ever since. No call centres, no subcontractor lottery — when you call Aleck, you get Aleck.</p>
@@ -1726,7 +1832,7 @@
 ════════════════════════════════ -->
 <section id="locations">
   <div class="wrap">
-    <div class="loc-header">
+    <div class="loc-header reveal">
       <span class="label">Where We Work</span>
       <span class="rule" style="margin-top:12px;"></span>
       <h2>We come to you, across Cape Town.</h2>
@@ -1776,7 +1882,7 @@
 <section id="contact">
   <div class="wrap">
     <div class="contact-grid">
-      <div class="contact-info">
+      <div class="contact-info reveal">
         <span class="label">Get in Touch</span>
         <h2>Let's talk about your project.</h2>
         <p class="intro">
@@ -1845,7 +1951,7 @@
           <a href="https://wa.me/+27848004749" class="btn btn-green">WhatsApp</a>
         </div>
       </div>
-      <div class="contact-form-box">
+      <div class="contact-form-box reveal reveal-d2">
         <p class="cfb-title">Request a Free Quote</p>
         <p class="cfb-sub">Fill in your details and we'll get back to you. Or just call — 084 800 4749.</p>
         <form id="qform" onsubmit="sendForm(event)">
@@ -1904,10 +2010,41 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo">
-          <span class="logo-top">Aleck</span>
-          <span class="logo-sub">the Renovator · Cape Town</span>
-        </div>
+        <div class="logo" style="display:flex; align-items:center; gap:10px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 60" width="32" height="38" aria-label="Aleck the Renovator logo mark">
+              <defs>
+                <clipPath id="fc-diamond">
+                  <polygon points="26,4 50,28 26,52 2,28"/>
+                </clipPath>
+              </defs>
+              <circle cx="18" cy="2" r="2" fill="#D4801A"/>
+              <circle cx="26" cy="0" r="2" fill="#D4801A"/>
+              <circle cx="34" cy="2" r="2" fill="#D4801A"/>
+              <polygon points="26,4 50,28 26,52 2,28" fill="#D4801A"/>
+              <g clip-path="url(#fc-diamond)" fill="#A85F10" opacity="0.85">
+                <rect x="4"  y="6"  width="18" height="5.5"/>
+                <rect x="24" y="6"  width="18" height="5.5"/>
+                <rect x="14" y="13" width="18" height="5.5"/>
+                <rect x="34" y="13" width="18" height="5.5"/>
+                <rect x="-2" y="13" width="14" height="5.5"/>
+                <rect x="4"  y="20" width="18" height="5.5"/>
+                <rect x="24" y="20" width="18" height="5.5"/>
+                <rect x="14" y="27" width="18" height="5.5"/>
+                <rect x="34" y="27" width="18" height="5.5"/>
+                <rect x="-2" y="27" width="14" height="5.5"/>
+                <rect x="4"  y="34" width="18" height="5.5"/>
+                <rect x="24" y="34" width="18" height="5.5"/>
+                <rect x="14" y="41" width="18" height="5.5"/>
+                <rect x="34" y="41" width="18" height="5.5"/>
+                <rect x="-2" y="41" width="14" height="5.5"/>
+              </g>
+              <polygon points="26,4 50,28 26,52 2,28" fill="none" stroke="#E8924A" stroke-width="1" opacity="0.4"/>
+            </svg>
+            <span style="display:flex; flex-direction:column; line-height:1.1;">
+              <span style="font-family:'Playfair Display',serif; font-style:italic; font-weight:700; font-size:1rem; color:#fff;">Aleck the Renovator</span>
+              <span style="font-family:'DM Mono',monospace; font-size:0.58rem; color:rgba(255,255,255,0.35); letter-spacing:0.1em; text-transform:uppercase; margin-top:2px;">Cape Town · Est. 2010</span>
+            </span>
+          </div>
         <p>Professional renovation services across Cape Town since 2010. Plumbing, painting, waterproofing, tiling, brickwork and full renovations — handled properly, every time.</p>
         <a href="https://wa.me/+27848004749" class="btn btn-green" style="font-size:0.82rem; padding:10px 18px;">WhatsApp a Quote</a>
       </div>
@@ -1968,6 +2105,22 @@ function closeNav(){ document.getElementById('mob-nav').classList.remove('open')
 
 /* ── Smooth scroll helper ── */
 function scrollTo(id){ var el = document.querySelector(id); if(el) el.scrollIntoView({behavior:'smooth'}); }
+/* ── Scroll reveal ── */
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+
+/* ── Nav scroll shadow ── */
+var _hdr = document.getElementById('site-header');
+window.addEventListener('scroll', function(){
+  _hdr.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
 
 /* ── Gallery filter ── */
 function filterGal(cat, btn){
